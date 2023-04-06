@@ -12,7 +12,7 @@
 <body>
 
     <!-- DIV CONTENEDOR 1 -->
-    <!-- Prueba 1 -->
+    <!-- Prueba 2 -->
 
     <div class="container">
         <div class="row">
