@@ -10,10 +10,7 @@
 </head>
 
 <body>
-
-    <!-- DIV CONTENEDOR 1 -->
-    <!-- Prueba 2 -->
-
+    
     <div class="container">
         <div class="row">
             <P class="text text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt, impedit.</P>
