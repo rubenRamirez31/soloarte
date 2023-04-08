@@ -1,1 +1,0 @@
-<link rel="stylesheet" href="../Plugins/bootstrap/css/bootstrap.min.css">
