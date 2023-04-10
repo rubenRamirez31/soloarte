@@ -7,8 +7,11 @@
     <?php include '../Layout/estilos.php'  ?>
     <title>SoloArte</title>
 </head>
-<body>
+<body class="bg bg-dark">
     <?php include '../Layout/navbar.php' ?>
+
+    <h1 class="text text-center text-white">Solo Arte</h1>
+    
 
     
 <?php include '../Layout/scripts.php' ?>
