@@ -13,9 +13,7 @@
 <body>
     <?php include '../Layout/navbar.php' ?>
 
-
-
-    <?php if ($_GET["resul"] === "1") : ?>
+    <?php if (  $_GET["resul"] === "1") : ?>
 
         <script>
             Swal.fire(
@@ -27,7 +25,14 @@
 
     <?php endif ?>
 
-    <?php require '../Conection/cn.php';
+
+
+
+    <?php 
+    
+    //conexion para la base de datos y consultar los productos
+
+    require '../Conection/cn.php';
 
     $query = "SELECT * FROM productos";
 
@@ -44,7 +49,7 @@
 
         <div class="row justify-content-end">
             <div class="col-auto">
-                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarModal"><i class="fa-solid fa-circle-plus mr-1" style="margin-right: 2px;"></i>Nuevo Registro</a>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarModal"><i class="fa-solid fa-circle-plus mr-1" style="margin-right: 5px;"></i>Nuevo Registro</a>
             </div>
         </div>
 
