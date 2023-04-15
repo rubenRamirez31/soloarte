@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <?php include '../Layout/estilos.php'  ?>
+    <?php include '../../Layout/estilos.php'  ?>
     <title>SoloArte</title>
 </head>
 
 <body>
-    <?php include '../Layout/navbar.php' ?>
+    <?php include '../../Layout/navbar.php' ?>
 
-    <?php if (  $_GET["resul"] === "1") : ?>
+    <?php if ($_GET["resul"] === "1") : ?>
 
         <script>
             Swal.fire(
@@ -28,11 +27,11 @@
 
 
 
-    <?php 
-    
+    <?php
+
     //conexion para la base de datos y consultar los productos
 
-    require '../Conection/cn.php';
+    require '../../Conection/cn.php';
 
     $query = "SELECT * FROM productos";
 
@@ -85,11 +84,18 @@
 
     </div>
 
+    <script>
+        if (window.performance.navigation.type == 1) {
+            location.replace('http://localhost:3000/Paginas/Admin/index.php');
+        } else if (window.performance.navigation.type == 2) {
+            location.replace('http://localhost:3000/Paginas/Admin/index.php');
+        } else if (window.performance.navigation.type == 3) {
+            location.replace('http://localhost:3000/Paginas/Admin/index.php');
+        }
+    </script>
 
-
-    <?php include '../Modales/agregarModal.php'; ?>
-    <?php include '../Layout/scripts.php' ?>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <?php include '../../Modales/agregarModal.php'; ?>
+    <?php include '../../Layout/scripts.php' ?>
 </body>
 
 </html>
