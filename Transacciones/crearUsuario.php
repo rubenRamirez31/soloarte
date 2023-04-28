@@ -13,11 +13,14 @@ $rol = 2;
 
 //funcion para hashear las contraseñas 
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+//funcion para que el email siempre sea en minusculas
 $emaillower = strtolower($email);
 
 $query2 = "SELECT * FROM usuarios WHERE email = '$emaillower'";
 $resultado = mysqli_query($db, $query2);
 
+//si el resultado regresa una fila
 if ($resultado->num_rows) {
 
     header('Location: /Paginas/crearUsuario.php?resul=1');
