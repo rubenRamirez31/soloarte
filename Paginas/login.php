@@ -13,7 +13,7 @@
     <?php include '../Layout/navbar.php' ?>
 
 
-    <?php if ($_GET["resul"] === "1") : ?>
+    <?php if (isset($_GET["resul"]) ===  "1") : ?>
         <!-- Codigo para activar sweet alert -->
         <script>
             Swal.fire(
@@ -53,7 +53,7 @@
                                         </div>
 
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            
+
                                             <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
                                             <!-- <a class="text-muted" href="#!">Forgot password?</a> -->
                                         </div>
