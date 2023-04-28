@@ -6,7 +6,6 @@ $errores = [];
 
 // Autenticar el usuario
 $email = mysqli_real_escape_string($db, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
-
 $password = mysqli_real_escape_string($db, $_POST['password']);
 
 if (!$email) {
@@ -29,8 +28,6 @@ if (empty($errores)) { //validar el usuario
 
         //Revisar si el password es correcto
         $usuario = mysqli_fetch_assoc($resultado);
-        // var_dump($usuario);
-
         //Verificar si el password es correcto o no
 
         $auth = password_verify($password, $usuario['password']);
@@ -44,7 +41,7 @@ if (empty($errores)) { //validar el usuario
             // $_SESSION['usuario'] = $usuario['email'];
             // $_SESSION['login'] = true;
 
-            header('location: /Paginas/Admin');
+            echo 'autenticado';
 
         } else {
 

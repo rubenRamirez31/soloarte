@@ -12,7 +12,7 @@
 <body>
     <?php include '../Layout/navbar.php' ?>
 
-    <?php if ($_GET["resul"] === "1") : ?>
+    <?php if ( isset($_GET["resul"])  === "1") : ?>
 
         <script>
             Swal.fire(
@@ -33,10 +33,8 @@
                         <div class="row g-0">
                             <div class="col-lg-4">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">We are more than just a company</h4>
-                                    <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <h4 class="mb-4 text-dark">Somos mas que una compañía</h4>
+                                    <p class="small mb-0 text-dark">Imagen</p>
                                 </div>
                             </div>
                             <div class="col-lg-8 d-flex align-items-center gradient-custom-2">
@@ -75,7 +73,7 @@
 
                                         <div class="form-outline mb-4">
                                             <input type="email" name="email" id="email" class="form-control" placeholder="Direcion de Correo electronico" required />
-                                            <label class="form-label" for="email">Correo Electronico</label>
+                                            <label class="form-label" for="email">Correo Electrónico</label>
                                         </div>
 
                                         <div class="form-outline mb-4">

@@ -31,10 +31,8 @@ if ($resultado->num_rows) {
 
     //agregarlo a la base de datos
     if ($db->query($query)) {
-        header('Location: /Paginas/login.php?resul=1');
+        header('Location: /soloarte/Paginas/login.php?resul=1');
     } else {
-        echo 'no se pudo pa';
-        var_dump($db->query($query));
-        exit;
+        header('Location: /soloarte/Paginas/crearUsuario.php?resul=2');
     }
 }

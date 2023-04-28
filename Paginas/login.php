@@ -33,18 +33,21 @@
                         <div class="row g-0">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
-
+                                    <!-- -->
                                     <div class="text-center">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo">
+                                        <!--<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo"> -->
+                                       
+                                        <h1>Logo*</h1>
+
                                         <h4 class="mt-1 mb-5 pb-1">SoloArte</h4>
                                     </div>
 
                                     <form action="../Transacciones/validarLogin.php" method="POST">
-                                        <p>Por favor inicia sesion con tu cuenta</p>
+                                        <p>Por favor inicia sesión con tu cuenta</p>
 
                                         <div class="form-outline mb-4">
                                             <input type="email" name="email" id="email" class="form-control" placeholder="Usuario o Direcion de Correo electronico" required />
-                                            <label class="form-label" for="email">Correo Electronico</label>
+                                            <label class="form-label" for="email">Correo Electrónico</label>
                                         </div>
 
                                         <div class="form-outline mb-4">
@@ -54,7 +57,7 @@
 
                                         <div class="text-center pt-1 mb-5 pb-1">
 
-                                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                                            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                                             <!-- <a class="text-muted" href="#!">Forgot password?</a> -->
                                         </div>
 
@@ -69,10 +72,8 @@
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">We are more than just a company</h4>
-                                    <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <h4 class="mb-4 text-dark">SoloArte</h4>
+                                    <p class="small mb-0 text-dark">Imagen</p>
                                 </div>
                             </div>
                         </div>
