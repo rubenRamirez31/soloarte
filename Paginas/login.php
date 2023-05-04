@@ -43,7 +43,7 @@
                                     </div>
 
                                     <form action="../Transacciones/validarLogin.php" method="POST">
-                                        <p>Por favor inicia sesión con tu cuenta</p>
+                                        <p>Inicia sesión con tu cuenta</p>
 
                                         <div class="form-outline mb-4">
                                             <input type="email" name="email" id="email" class="form-control" placeholder="Usuario o Direcion de Correo electronico" required />
