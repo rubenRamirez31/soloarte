@@ -12,7 +12,7 @@
 <body>
     <?php include '../../Layout/navbar.php' ?>
 
-    <?php if ($_GET["resul"] === "1") : ?>
+    <?php if (isset($_GET["resul"])  === "1") : ?>
 
         <script>
             Swal.fire(

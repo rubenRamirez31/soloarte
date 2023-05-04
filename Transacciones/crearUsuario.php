@@ -13,11 +13,14 @@ $rol = 2;
 
 //funcion para hashear las contraseñas 
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+//funcion para que el email siempre sea en minusculas
 $emaillower = strtolower($email);
 
 $query2 = "SELECT * FROM usuarios WHERE email = '$emaillower'";
 $resultado = mysqli_query($db, $query2);
 
+//si el resultado regresa una fila
 if ($resultado->num_rows) {
 
     header('Location: /Paginas/crearUsuario.php?resul=1');
@@ -28,10 +31,8 @@ if ($resultado->num_rows) {
 
     //agregarlo a la base de datos
     if ($db->query($query)) {
-        header('Location: /Paginas/login.php?resul=1');
+        header('Location: /soloarte/Paginas/login.php?resul=1');
     } else {
-        echo 'no se pudo pa';
-        var_dump($db->query($query));
-        exit;
+        header('Location: /soloarte/Paginas/crearUsuario.php?resul=2');
     }
 }
