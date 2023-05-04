@@ -34,12 +34,12 @@ if (empty($errores)) { //validar el usuario
 
         if ($auth) {
 
-            // El usuario esta autenticado
-            // session_start();
+            //El usuario esta autenticado
+            session_start();
 
             //LLenar el arreglo de la sesion
-            // $_SESSION['usuario'] = $usuario['email'];
-            // $_SESSION['login'] = true;
+             $_SESSION['usuario'] = $usuario['email'];
+             $_SESSION['login'] = true;
 
             echo 'autenticado';
 
