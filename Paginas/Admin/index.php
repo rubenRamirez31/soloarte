@@ -86,8 +86,35 @@
                     <th class="text text-center">Acción</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php while ($row_producto = $productos->fetch_assoc()) : ?>
+            <tbody id="content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <?php while ($row_producto = $productos->fetch_assoc()) : ?>
 
                     <tr>
                         <td> <?php echo $row_producto['id_producto'] ?> </td>
@@ -109,7 +136,7 @@
                         </td>
                     </tr>
 
-                <?php endwhile ?>
+                <?php endwhile ?> -->
             </tbody>
         </table>
 
@@ -174,6 +201,33 @@
             eliminarModal.querySelector('.modal-footer #id').value = id;
 
         });
+    </script>
+
+    <script>
+
+        getData();
+
+        document.getElementById("campo").addEventListener("keyup",getData);
+
+        function getData() {
+            let input = document.getElementById("campo").value;
+            let content = document.getElementById("content");
+
+            let url = "../../Transacciones/cagarRegistros.php";
+
+            let formData = new FormData();
+
+            formData.append('campo',input);
+
+            fetch(url, {
+                method: "POST",
+                body: formData
+            }).then(response => response.json())
+            .then(data => {
+                content.innerHTML = data
+            }).catch(err => console.log(err))
+        }
+
     </script>
 
     <?php include '../../Layout/scripts.php' ?>
