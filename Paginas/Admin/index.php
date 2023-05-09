@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css"/>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <?php include '../../Layout/estilos.php'  ?>
     <title>SoloArte</title>
 </head>
 
 <body>
     <?php include '../../Layout/navbar.php' ?>
+
+
     <?php
 
     $resultado = $_GET['resul'] ?? null;
@@ -66,14 +65,18 @@
         <h1 class="text text-center">Productos</h1>
 
 
-        <div class="row justify-content-end">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <label for="campo">Buscar</label>
+                <input type="text" class=" form-control" id="campo" name="campo">
+            </div>
             <div class="col-auto d-flex align-items-end">
                 <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarModal"><i class="fa-solid fa-circle-plus mr-1" style="margin-right: 5px;"></i>Nuevo Producto</a>
             </div>
         </div>
 
 
-        <table class="table table-sm table-striped table-hover mt-4" id="mitabla">
+        <table class="table table-sm table-striped table-hover mt-4">
             <thead class="table-dark">
                 <tr>
                     <th>Id</th>
@@ -85,36 +88,64 @@
                     <th class="text text-center">Acción</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="content">
 
 
-                <?php while ($row_producto = $productos->fetch_assoc()) : ?>
 
-                    <tr>
-                        <td> <?php echo $row_producto['id_producto'] ?> </td>
-                        <td> <?php echo $row_producto['nombre'] ?> </td>
-                        <td> <?php echo $row_producto['id_imagen'] ?> </td>
-                        <td> <?php echo $row_producto['descripcion'] ?> </td>
-                        <td> <?php echo $row_producto['precio'] ?> </td>
-                        <td> <?php echo $row_producto['stock'] ?> </td>
-                        <td class=" d-lg-flex justify-content-around">
-                            <div>
-                                <a href="#" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#actualizarModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>">
-                                    <i class="fa-solid fa-pen-to-square"></i> Actualizar</a>
 
-                            </div>
-                            <div>
-                                <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>"><i class="fa-solid fa-trash"></i> Eliminar</a>
 
-                            </div>
-                        </td>
-                    </tr>
 
-                <?php endwhile ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <?php while ($row_producto = $productos->fetch_assoc()) : ?>
+
+                        <tr>
+                            <td> <?php echo $row_producto['id_producto'] ?> </td>
+                            <td> <?php echo $row_producto['nombre'] ?> </td>
+                            <td> <?php echo $row_producto['id_imagen'] ?> </td>
+                            <td> <?php echo $row_producto['descripcion'] ?> </td>
+                            <td> <?php echo $row_producto['precio'] ?> </td>
+                            <td> <?php echo $row_producto['stock'] ?> </td>
+                            <td class=" d-lg-flex justify-content-around">
+                                <div>
+                                    <a href="#" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#actualizarModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>">
+                                        <i class="fa-solid fa-pen-to-square"></i> Actualizar</a>
+
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>"><i class="fa-solid fa-trash"></i> Eliminar</a>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                <?php endwhile ?> -->
             </tbody>
         </table>
 
     </div>
+
+    <script src="../../Jquery/jquery-3.6.4.min.js"></script>
+
 
     <script>
         /*  if (window.performance.navigation.type == 1) {
@@ -177,21 +208,22 @@
         });
     </script>
 
+    <script>
+
     <!-- <script>
+            getData();
 
-        getData();
+            document.getElementById("campo").addEventListener("keyup", getData);
 
-        document.getElementById("campo").addEventListener("keyup",getData);
+            function getData() {
+                let input = document.getElementById("campo").value;
+                let content = document.getElementById("content");
 
-        function getData() {
-            let input = document.getElementById("campo").value;
-            let content = document.getElementById("content");
+                let url = "../../Transacciones/cagarRegistros.php";
 
-            let url = "../../Transacciones/cagarRegistros.php";
+                let formData = new FormData();
 
-            let formData = new FormData();
-
-            formData.append('campo',input);
+                formData.append('campo', input);
 
             fetch(url, {
                 method: "POST",
@@ -202,12 +234,6 @@
             }).catch(err => console.log(err))
         }
 
-    </script> -->
-
-    <script>
-        $(document).ready(function() {
-            $('#miTabla').DataTable();
-        });
     </script>
 
     <?php include '../../Layout/scripts.php' ?>
