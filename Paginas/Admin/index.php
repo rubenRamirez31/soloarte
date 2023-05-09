@@ -12,31 +12,7 @@
 </head>
 
 <body>
-
-    <style>
-        nav,
-        .offcanvas {
-            background-color: #1e293b;
-        }
-
-        .navbar-toggler {
-            border: none;
-        }
-
-        .navbar-toggler:focus {
-            outline: none;
-            box-shadow: none;
-        }
-
-        @media (max-width: 768px) {
-            .navbar-nav>li:hover {
-                background-color: #0dcaf0;
-            }
-        }
-    </style>
-
     <?php include '../../Layout/navbar.php' ?>
-
 
 
     <?php

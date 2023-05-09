@@ -60,16 +60,16 @@
       <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
         <ul class="navbar-nav fs-5 justify-content-evenly">
           <li class="nav-item p-3 py-md-1">
-            <a href="" class="nav-link text-white"><i class="fa-solid fa-warehouse"></i> Productos</a>
+            <a href="index.php" class="nav-link text-white"><i class="fa-solid fa-warehouse"></i> Productos</a>
           </li>
           <li class="nav-item p-3 py-md-1">
-            <a href="" class="nav-link text-white"><i class="fa-solid fa-user"></i> Usuarios</a>
+            <a href="Usuarios.php" class="nav-link text-white"><i class="fa-solid fa-user"></i> Usuarios</a>
           </li>
           <li class="nav-item p-3 py-md-1">
-            <a href="" class="nav-link text-white"><i class="fa-solid fa-truck"></i> Envios</a>
+            <a href="Envios.php" class="nav-link text-white"><i class="fa-solid fa-truck"></i> Envios</a>
           </li>
           <li class="nav-item p-3 py-md-1">
-            <a href="" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Solicitudes</a>
+            <a href="Solicitudes.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Solicitudes</a>
           </li>
         </ul>
         <!-- enlaces redes sociales -->
