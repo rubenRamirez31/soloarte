@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css"/>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <?php include '../../Layout/estilos.php'  ?>
     <title>SoloArte</title>
 </head>
@@ -63,18 +66,14 @@
         <h1 class="text text-center">Productos</h1>
 
 
-        <div class="row justify-content-between">
-            <div class="col-auto">
-                <label for="campo">Buscar</label>
-                <input type="text" class=" form-control" id="campo" name="campo">
-            </div>
+        <div class="row justify-content-end">
             <div class="col-auto d-flex align-items-end">
                 <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarModal"><i class="fa-solid fa-circle-plus mr-1" style="margin-right: 5px;"></i>Nuevo Producto</a>
             </div>
         </div>
 
 
-        <table class="table table-sm table-striped table-hover mt-4">
+        <table class="table table-sm table-striped table-hover mt-4" id="mitabla">
             <thead class="table-dark">
                 <tr>
                     <th>Id</th>
@@ -86,35 +85,10 @@
                     <th class="text text-center">Acción</th>
                 </tr>
             </thead>
-            <tbody id="content">
+            <tbody>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- <?php while ($row_producto = $productos->fetch_assoc()) : ?>
+                <?php while ($row_producto = $productos->fetch_assoc()) : ?>
 
                     <tr>
                         <td> <?php echo $row_producto['id_producto'] ?> </td>
@@ -136,20 +110,20 @@
                         </td>
                     </tr>
 
-                <?php endwhile ?> -->
+                <?php endwhile ?>
             </tbody>
         </table>
 
     </div>
 
     <script>
-        if (window.performance.navigation.type == 1) {
+        /*  if (window.performance.navigation.type == 1) {
             location.replace('http://localhost:3000/Paginas/Admin/index.php');
         } else if (window.performance.navigation.type == 2) {
             location.replace('http://localhost:3000/Paginas/Admin/index.php');
         } else if (window.performance.navigation.type == 3) {
             location.replace('http://localhost:3000/Paginas/Admin/index.php');
-        }
+        } */
     </script>
 
 
@@ -203,7 +177,7 @@
         });
     </script>
 
-    <script>
+    <!-- <script>
 
         getData();
 
@@ -228,6 +202,12 @@
             }).catch(err => console.log(err))
         }
 
+    </script> -->
+
+    <script>
+        $(document).ready(function() {
+            $('#miTabla').DataTable();
+        });
     </script>
 
     <?php include '../../Layout/scripts.php' ?>
