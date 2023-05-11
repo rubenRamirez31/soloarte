@@ -148,13 +148,13 @@
 
 
     <script>
-        /*  if (window.performance.navigation.type == 1) {
+        if (window.performance.navigation.type == 1) {
             location.replace('http://localhost:3000/Paginas/Admin/index.php');
         } else if (window.performance.navigation.type == 2) {
             location.replace('http://localhost:3000/Paginas/Admin/index.php');
         } else if (window.performance.navigation.type == 3) {
             location.replace('http://localhost:3000/Paginas/Admin/index.php');
-        } */
+        }
     </script>
 
 
@@ -225,17 +225,16 @@
 
                 formData.append('campo', input);
 
-            fetch(url, {
-                method: "POST",
-                body: formData
-            }).then(response => response.json())
-            .then(data => {
-                content.innerHTML = data
-            }).catch(err => console.log(err))
-        }
-
-    </script>
-
+                fetch(url, {
+                        method: "POST",
+                        body: formData
+                    }).then(response => response.json())
+                    .then(data => {
+                        content.innerHTML = data
+                    }).catch(err => console.log(err))
+            }
+        </script> -->
+    <script type="text/javascript" src="../../DataTable/datatables.min.js"></script>
     <?php include '../../Layout/scripts.php' ?>
 </body>
 
