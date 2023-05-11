@@ -10,7 +10,7 @@ $query = "INSERT INTO productos (nombre,descripcion,precio,stock)
 VALUES('$nombre','$descripcion',$precio,$stock)";
 
 if ($db->query($query)) {
-    header('Location: /Paginas/Admin/index.php?resul=1');
+    header('Location: /soloarte/Paginas/Admin/index.php?resul=1');
 } else {
     echo 'error al insertar';
     exit;

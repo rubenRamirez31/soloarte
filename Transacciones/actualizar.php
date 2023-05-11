@@ -12,7 +12,7 @@ $query = "UPDATE  productos SET nombre = '$nombre', descripcion = '$descripcion'
 WHERE id_producto = $id ";
 
 if ($db->query($query)) {
-    header('Location: /Paginas/Admin/index.php?resul=2');
+    header('Location:/soloarte/Paginas/Admin/index.php?resul=2');
 } else {
     echo 'error al insertar';
     exit;
