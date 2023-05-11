@@ -23,11 +23,6 @@
     <div class="container py-3">
         <h1 class="text text-center">Usuarios</h1>
 
-        <!-- <div class="row justify-content-end">
-            <div class="col-auto d-flex align-items-end mb-2">
-
-            </div>
-        </div> -->
 
         <div class="table-responsive">
             <table id="usuarios" class="table table-sm table-striped table-hover mt-4 table-responsive">
@@ -46,7 +41,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    while ($row_usuario = $usuarios->fetch_assoc()): ?>
+                    while ($row_usuario = $usuarios->fetch_assoc()) : ?>
                         <tr>
                             <td>
                                 <?php echo $row_usuario['id_usuario'] ?>
@@ -68,23 +63,22 @@
                             </td>
 
                             <?php
-                            $query = "select u.nombre, r.rol
-                            from usuarios as u
-                            inner join roles as r on r.id_rol = u.id_rol;";
+                            $query = "SELECT rol FROM roles INNER JOIN usuarios 
+                            ON roles.id_rol = usuarios.id_rol WHERE
+                             usuarios.id_usuario = " . $row_usuario['id_usuario'] ;
+
                             $nombre = $db->query($query);
                             ?>
                             <td>
-                    <?php while ($row_nombre = $nombre->fetch_assoc()): ?>
-                            
-                                <?php echo $row_usuario['id_rol'] ?>
-                            
-                        <?php endwhile ?>
+                                <?php while ($row_nombre = $nombre->fetch_assoc()) : ?>
+
+                                    <?php echo $row_nombre['rol'] ?>
+
+                                <?php endwhile ?>
                             </td>
                             <td>
                                 <div>
-                                    <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal"
-                                        data-bs-target="#eliminarUsuarioModal"
-                                        data-bs-id="<?php echo $row_producto['id_usuario'] ?>">
+                                    <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal" data-bs-id="<?php echo $row_producto['id_usuario'] ?>">
                                         <i class="fa-solid fa-pen-to-square"></i>Eliminar</a>
                                 </div>
                             </td>
@@ -103,7 +97,7 @@
     <script>
         var $j = jQuery.noConflict();
 
-        $j(document).ready(function () {
+        $j(document).ready(function() {
             $j('#usuarios').DataTable({
                 "language": {
                     "lengthMenu": "Mostrar _MENU_ Usuarios",
