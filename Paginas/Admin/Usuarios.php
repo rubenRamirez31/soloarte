@@ -23,7 +23,6 @@
     <div class="container py-3">
         <h1 class="text text-center">Usuarios</h1>
 
-
         <div class="table-responsive">
             <table id="usuarios" class="table table-sm table-striped table-hover mt-4 table-responsive">
                 <thead class="table-dark">
@@ -65,7 +64,7 @@
                             <?php
                             $query = "SELECT rol FROM roles INNER JOIN usuarios 
                             ON roles.id_rol = usuarios.id_rol WHERE
-                             usuarios.id_usuario = " . $row_usuario['id_usuario'] ;
+                             usuarios.id_usuario = " . $row_usuario['id_usuario'];
 
                             $nombre = $db->query($query);
                             ?>
@@ -78,8 +77,8 @@
                             </td>
                             <td>
                                 <div>
-                                    <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal" data-bs-id="<?php echo $row_producto['id_usuario'] ?>">
-                                        <i class="fa-solid fa-pen-to-square"></i>Eliminar</a>
+                                    <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal" data-bs-id="<?php echo  $row_usuario['id_usuario'] ?>">
+                                        <i class="fa-solid fa-user-slash"></i> Eliminar</a>
                                 </div>
                             </td>
                         </tr>
@@ -87,13 +86,23 @@
                 </tbody>
             </table>
         </div>
-
-
-
-
-
     </div>
+
     <script src="../../Jquery/jquery-3.6.4.min.js"></script>
+    <?php include '../../Modales/eliminarUsuarioModal.php'; ?>
+
+    <script>
+        let eliminarModal = document.getElementById('eliminarUsuarioModal');
+
+        eliminarModal.addEventListener('shown.bs.modal', event => {
+            let button = event.relatedTarget;
+            let id = button.getAttribute('data-bs-id');
+
+            eliminarModal.querySelector('.modal-footer #id').value = id;
+
+        });
+    </script>
+
     <script>
         var $j = jQuery.noConflict();
 
