@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../DataTable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../DataTable/DataTables-1.13.4/css/dataTables.bootstrap5.min.css">
     <?php include '../../Layout/estilos.php'  ?>
     <title>SoloArte</title>
 </head>
@@ -65,58 +67,29 @@
         <h1 class="text text-center">Productos</h1>
 
 
-        <div class="row justify-content-between">
-            <div class="col-auto">
-                <label for="campo">Buscar</label>
-                <input type="text" class=" form-control" id="campo" name="campo">
-            </div>
-            <div class="col-auto d-flex align-items-end">
+        <div class="row justify-content-end">
+
+            <div class="col-auto d-flex align-items-end mb-2">
                 <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarModal"><i class="fa-solid fa-circle-plus mr-1" style="margin-right: 5px;"></i>Nuevo Producto</a>
             </div>
         </div>
 
+        <div class="table-responsive">
+            <table id="productos" class="table table-sm table-striped table-hover mt-4 table-responsive">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Imagen</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th class="text text-center">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-        <table class="table table-sm table-striped table-hover mt-4">
-            <thead class="table-dark">
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Imagen</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Stock</th>
-                    <th class="text text-center">Acción</th>
-                </tr>
-            </thead>
-            <tbody id="content">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- <?php while ($row_producto = $productos->fetch_assoc()) : ?>
+                    <?php while ($row_producto = $productos->fetch_assoc()) : ?>
 
                         <tr>
                             <td> <?php echo $row_producto['id_producto'] ?> </td>
@@ -138,9 +111,11 @@
                             </td>
                         </tr>
 
-                <?php endwhile ?> -->
-            </tbody>
-        </table>
+                    <?php endwhile ?>
+                </tbody>
+            </table>
+        </div>
+
 
     </div>
 
@@ -209,31 +184,29 @@
     </script>
 
     <script>
+        var $j = jQuery.noConflict();
 
-    <!-- <script>
-            getData();
+        $j(document).ready(function() {
+            $j('#productos').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ Productos",
+                    "zeroRecords": "Sin resultados",
+                    "info": "Mostrando productos del _START_ al _END_ de un total de _TOTAL_ productos",
+                    "infoEmpty": "Mostrando productos del 0 al 0 de un total de 0 productos",
+                    "infoFiltered": "(Filtrando de un total de _MAX_ productos)",
+                    "sSearch": "Buscar",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Ultimo",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "sProcessing": "Procesando..."
+                }
+            });
+        });
+    </script>
 
-            document.getElementById("campo").addEventListener("keyup", getData);
-
-            function getData() {
-                let input = document.getElementById("campo").value;
-                let content = document.getElementById("content");
-
-                let url = "../../Transacciones/cagarRegistros.php";
-
-                let formData = new FormData();
-
-                formData.append('campo', input);
-
-                fetch(url, {
-                        method: "POST",
-                        body: formData
-                    }).then(response => response.json())
-                    .then(data => {
-                        content.innerHTML = data
-                    }).catch(err => console.log(err))
-            }
-        </script> -->
     <script type="text/javascript" src="../../DataTable/datatables.min.js"></script>
     <?php include '../../Layout/scripts.php' ?>
 </body>
