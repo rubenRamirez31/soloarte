@@ -122,15 +122,15 @@
     <script src="../../Jquery/jquery-3.6.4.min.js"></script>
 
 
-    <!-- <script>
+    <script>
         if (window.performance.navigation.type == 1) {
-            location.replace('http://localhost:3000/Paginas/Admin/index.php');
+            location.replace('http://localhost:8080/soloarte/Paginas/Admin/index.php');
         } else if (window.performance.navigation.type == 2) {
-            location.replace('http://localhost:3000/Paginas/Admin/index.php');
+            location.replace('http://localhost:8080/soloarte/Paginas/Admin/index.php');
         } else if (window.performance.navigation.type == 3) {
-            location.replace('http://localhost:3000/Paginas/Admin/index.php');
+            location.replace('http://localhost:8080/soloarte/Paginas/Admin/index.php');
         }
-    </script> -->
+    </script>
 
 
 
