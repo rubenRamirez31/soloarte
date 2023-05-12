@@ -1,5 +1,6 @@
 <?php
 
+
 require '../Conection/cn.php';
 
 //aqui pillas lo que venga de post que enviaste en el formulario
