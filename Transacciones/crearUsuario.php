@@ -24,7 +24,7 @@ $resultado = mysqli_query($db, $query2);
 //si el resultado regresa una fila
 if ($resultado->num_rows) {
 
-    header('Location: /Paginas/crearUsuario.php?resul=1');
+    header('Location: /soloarte/Paginas/crearUsuario.php?resul=1');
 
 } else {
     //Query para crear el usuario
