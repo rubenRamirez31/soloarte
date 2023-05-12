@@ -71,6 +71,9 @@
           <li class="nav-item p-3 py-md-1">
             <a href="Solicitudes.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Solicitudes</a>
           </li>
+          <li class="nav-item p` py-md-1">
+            <a href=""></a>
+          </li>
         </ul>
         <!-- enlaces redes sociales -->
 
