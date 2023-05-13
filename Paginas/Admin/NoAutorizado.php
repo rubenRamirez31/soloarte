@@ -21,8 +21,9 @@ session_start();
                 style="width: col-md-6;" alt="...">
             <div class="card-body" style="col-md-6">
                 <h5 class="card-title text-danger">Atención!!!!</h5>
-                <p class="card-text">Parece que no tienes autorización para ingresar a esta pagina</p>
-                <a href="----" class="btn btn-outline-primary">Iniciar sesión</a>
+                <h3 class="card-text">Parece que no tienes autorización para ingresar a esta pagina</h3>
+
+                <a href="../../Index.php" class="btn btn-lg btn-outline-primary">Regresar a principal</a>
             </div>
         </div>
     </div>
