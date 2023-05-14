@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="Plugins/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="Plugins/bootstrap/css/all.min.css">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <title>Bienvenido a MiTienda</title>
+  <title>Bienvenido a SoloArte</title>
  
 </head>
 <body>
@@ -51,8 +51,6 @@
   </div>
 </nav>
 
- 
-
   <!-- Carrusel de imágenes -->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -62,13 +60,13 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="../soloarte/Images/CB1.jpg" alt="Imagen 1">
+        <img class="d-block w-100" src="/Images/CB1.jpg" alt="Imagen 1">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="../soloarte/Images/CB2.jpg" alt="Imagen 2">
+        <img class="d-block w-100" src="/Images/CB2.jpg" alt="Imagen 2">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="../soloarte/Images/CB3.jpg" alt="Imagen 3">
+        <img class="d-block w-100" src="/Images/CB3.jpg" alt="Imagen 3">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
