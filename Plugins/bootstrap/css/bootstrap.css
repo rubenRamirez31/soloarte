@@ -6742,6 +6742,16 @@ input[type="submit"] {
   color: #212529;
 }
 
+.carousel-container {
+  max-width: 30px; /* Ajusta el ancho máximo del carrusel según tus necesidades */
+  margin: 0 auto; /* Centra el carrusel en la página */
+}
+
+.carousel-item img {
+  width: 5%; /* Ajusta el ancho de las imágenes al 100% del contenedor */
+  height: auto; /* Permite que la altura de las imágenes se ajuste proporcionalmente */
+}
+
 .carousel {
   position: relative;
 }

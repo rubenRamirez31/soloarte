@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="Plugins/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="Plugins/bootstrap/css/all.min.css">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <title>Bienvenido a MiTienda</title>
+  <title>Solo Arte</title>
  
 </head>
 <body>
@@ -51,39 +51,34 @@
   </div>
 </nav>
 
- 
 
-  <!-- Carrusel de imágenes -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="../soloarte/Images/CB1.jpg" alt="Imagen 1">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="../soloarte/Images/CB2.jpg" alt="Imagen 2">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="../soloarte/Images/CB3.jpg" alt="Imagen 3">
-      </div>
+ 
+<!-- Carrusel de imágenes -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../soloarte/Images/CB1.jpg" class="d-block w-100" alt="...">
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Siguiente</span>
-    </a>
+    <div class="carousel-item">
+      <img src="../soloarte/Images/CB2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../soloarte/Images/CB3.jpg" class="d-block w-100" alt="...">
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
   <!-- Contenido principal -->
   <div class="container mt-5">
-    <h1>Bienvenido a MiTienda</h1>
+    <h1>Bienvenido a Solo Arte</h1>
 
     <p>¡Encuentra los mejores productos al mejor precio en nuestra tienda en línea! Explora nuestra amplia selección de categorías y descubre increíbles ofertas que no podrás resistir.</p>
     <a href="#" class="btn btn-primary">Explorar</a>
