@@ -186,7 +186,7 @@ if ($_SESSION['rol'] != 1) {
         agregarimgModal.addEventListener('shown.bs.modal', event => {
             let button = event.relatedTarget;
             let id = button.getAttribute('data-bs-id');
-            eliminarModal.querySelector('.modal-footer #id').value = id;
+            agregarimgModal.querySelector('.modal-footer #id').value = id;
 
         });
     </script>
