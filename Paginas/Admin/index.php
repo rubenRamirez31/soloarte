@@ -60,7 +60,15 @@ if ($_SESSION['rol'] != 1) {
             );
         </script>
 
-    <?php endif;  ?>
+    <?php elseif ($resultado === "4") : ?>
+            <script>
+                Swal.fire(
+                'Imagenes Agregadas Correctamente',
+                '',
+                'success'
+            );
+            </script>
+        <?php endif ?>
 
 
 
