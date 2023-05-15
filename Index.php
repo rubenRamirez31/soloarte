@@ -96,8 +96,62 @@
     <a href="Paginas/Usuario/Productos.php" class="btn btn-primary">Explorar</a>
   </div>
 
-  <!-- Enlaces a los archivos JavaScript de Bootstrap -->
-  <script src="Plugins/bootstrap/js/bootstrap.min.js"></script>
-</body>
 
+<!-- Sección "Quiénes somos" -->
+<section id="quienes-somos" class="bg-light py-5">
+  <div class="container">
+    <h2>Quiénes somos</h2>
+    <p>En Solo Arte, nos apasiona el arte mexicano y estamos comprometidos con su promoción y difusión. Nuestra misión es brindar una plataforma para que los artistas locales puedan exhibir y comercializar su trabajo, celebrando la riqueza cultural de México.</p>
+    <p>Nos enorgullece presentar una amplia variedad de arte mexicano, desde pinturas y esculturas hasta artesanías tradicionales. Trabajamos en estrecha colaboración con artistas reconocidos y emergentes, proporcionándoles un espacio para que muestren su talento y compartan su visión única.</p>
+    <p>Además de promover el arte, también nos preocupamos por preservar las técnicas y tradiciones artesanales de México. Valoramos el legado cultural que se transmite de generación en generación, y buscamos apoyar a los artesanos locales, quienes con su habilidad y dedicación crean piezas únicas y auténticas.</p>
+    <p>En Solo Arte, creemos en el poder del arte para enriquecer nuestras vidas, expresar emociones y contar historias. Te invitamos a explorar nuestra tienda en línea y descubrir la belleza y diversidad del arte mexicano. Únete a nosotros en esta maravillosa travesía artística y sé parte de nuestra comunidad.</p>
+
+  </div>
+</section>
+
+<!-- Sección de productos -->
+<section id="productos" class="py-5">
+  <div class="container">
+    <h2>Productos destacados</h2>
+    <!-- Aquí puedes agregar tus productos utilizando las cartas de Bootstrap -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="ruta-de-la-imagen.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del producto</h5>
+            <p class="card-text">Breve descripción del producto.</p>
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repite el código anterior para cada producto -->
+    </div>
+  </div>
+</section>
+
+<!-- Sección "Términos y condiciones" -->
+<section id="terminos-condiciones" class="bg-light py-5">
+  <div class="container">
+    <h2>Términos y condiciones</h2>
+    <p>Aquí puedes agregar los términos y condiciones que rigen el uso de tu sitio web y la compra de productos. Asegúrate de incluir información relevante sobre envío, devoluciones, políticas de privacidad, etc.</p>
+  </div>
+</section>
+
+<!-- Sección "Trabaja con nosotros" -->
+<section id="trabaja-con-nosotros" class="py-5">
+  <div class="container">
+    <h2>Trabaja con nosotros</h2>
+    <p>Si estás interesado en formar parte de nuestro equipo, puedes agregar aquí información sobre oportunidades laborales, requisitos y cómo enviar una solicitud. Anima a los visitantes a unirse a tu proyecto.</p>
+  </div>
+</section>
+
+<!-- Enlaces a los archivos JavaScript de Bootstrap -->
+<script src="Plugins/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+   <!-- Enlaces a los archivos JavaScript de Bootstrap -->
+   <script src="Plugins/bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>
