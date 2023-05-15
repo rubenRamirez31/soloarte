@@ -10,9 +10,11 @@
 </head>
 
 <body>
-    <?php include '../Layout/navbar.php' ?>
-
-    <?php if (isset($_GET["resul"])  === "1") : ?>
+    <?php 
+    
+    $resultado = $_GET['resul'] ?? null;
+    
+    if ($resultado  === "1") : ?>
 
         <script>
             Swal.fire(
@@ -23,7 +25,6 @@
         </script>
 
     <?php endif ?>
-
 
     <section class="" style="background-color: #eee; height: 100%;">
         <div class="container py-5 h-100">
@@ -43,7 +44,7 @@
                                 <div class="card-body p-md-5 mx-md-4">
 
                                     <div class="text-center">
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo">
+                                        <img src="../Images/logo.jpg" style="width: 185px;" alt="logo">
                                         <h4 class="mt-1 mb-3 pb-1">Registrate</h4>
                                     </div>
 

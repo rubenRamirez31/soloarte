@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['nombre'])) {
+    header('Location:/soloarte/Paginas/Usuario/Productos.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,66 +15,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include '../Layout/estilos.php'  ?>
-    <title>Inicia Sesion</title>
+    <title>Inicia Sesión</title>
 </head>
 
 <body>
 
-    <?php if (isset($_GET["resul"]) ===  "1") : ?>
+    <?php
+
+    $resultado = $_GET['resul'] ?? null;
+
+    if ($resultado ===  "1") : ?>
         <!-- Codigo para activar sweet alert -->
         <script>
             Swal.fire(
                 'Usuario Creado Correctamente',
-                'Ahora puede acceder.',
+                '',
                 'success'
             );
         </script>
 
     <?php endif ?>
 
-    <section class="ImagenFondoLogin" style="height: 100%; ">
+    <section class="h-100 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
-                    <div class="cardSALogin rounded-3 text-white">
-                        <div class="row g-1 bg-VioletaErica">
-                            <div class="col-lg-6 ">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
-                                    <!-- -->
+
                                     <div class="text-center">
-                                        <!--<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 185px;" alt="logo"> -->
-
-                                        <h1>Logo*</h1>
-
+                                        <img src="../Images/logo.jpg" style="width: 185px;" alt="logo">
                                         <h4 class="mt-1 mb-5 pb-1">SoloArte</h4>
                                     </div>
 
                                     <form action="../Transacciones/validarLogin.php" method="POST">
-                                        <p>Inicia sesión con tu cuenta</p>
-
                                         <div class="form-outline mb-4">
-                                            <input type="email" name="email" id="email" class="form-control" placeholder="Usuario o Direcion de Correo electronico" required />
-                                            <label class="form-label" for="email">Correo Electrónico</label>
+                                            <input type="email" name="email" id="form2Example11" class="form-control" />
+                                            <label class="form-label" for="form2Example11">Correo Electronico</label>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <input type="password" name="password" id="password" class="form-control" required />
-                                            <label class="form-label" for="password">Contraseña</label>
-                                        </div>
-
-                                        <div class="text-center pt-1 mb-5 pb-1">
-
-                                            <button type="submit" class="btn bg-NaranjaSA">Iniciar Sesión</button>
-                                            <!-- <a class="text-muted" href="#!">Forgot password?</a> -->
+                                            <input type="password" name="password" id="form2Example22" class="form-control" />
+                                            <label class="form-label" for="form2Example22">Contraseña</label>
                                         </div>
 
                                         <div class="d-flex align-items-center justify-content-center pb-4">
                                             <p class="mb-0 me-2">¿No tienes una cuenta?</p>
-                                            <a href="crearUsuario.php" class="btn btn-outline-danger">Crea una</a>
+                                            <a href="crearUsuario.php" class="btn btn-outline-dark">Crear Una</a>
                                         </div>
 
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <button type="submit" class="btn bg-NaranjaSA">Iniciar Sesión</button>
+                                        </div>
                                     </form>
 
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4">We are more than just a company</h4>
+                                    <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                                 </div>
                             </div>
                         </div>
@@ -75,125 +88,127 @@
         </div>
     </section>
 
-    <!-- Remove the container if you want to extend the Footer to full width. -->
-
-    <!-- Footer -->
-    <footer class="text-center text-lg-start text-white bg-brownSA">
+    <footer class="bg-primary text-center text-lg-start text-white">
         <!-- Grid container -->
-        <div class="container p-4 pb-0">
-            <!-- Section: Links -->
-            <section class="">
-                <!--Grid row-->
-                <div class="row">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">
-                            Company name
-                        </h6>
-                        <p>
-                            Here you can use rows and columns to organize your footer
-                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit.
-                        </p>
-                    </div>
-                    <!-- Grid column -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row my-4">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
 
-                    <hr class="w-100 clearfix d-md-none" />
-
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-                        <p>
-                            <a class="text-white">MDBootstrap</a>
-                        </p>
-                        <p>
-                            <a class="text-white">MDWordPress</a>
-                        </p>
-                        <p>
-                            <a class="text-white">BrandFlow</a>
-                        </p>
-                        <p>
-                            <a class="text-white">Bootstrap Angular</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <hr class="w-100 clearfix d-md-none" />
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">
-                            Useful links
-                        </h6>
-                        <p>
-                            <a class="text-white">Your Account</a>
-                        </p>
-                        <p>
-                            <a class="text-white">Become an Affiliate</a>
-                        </p>
-                        <p>
-                            <a class="text-white">Shipping Rates</a>
-                        </p>
-                        <p>
-                            <a class="text-white">Help</a>
-                        </p>
+                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+                        <img src="https://mdbootstrap.com/img/Photos/new-templates/animal-shelter/logo.png" height="70" alt="" loading="lazy" />
                     </div>
 
-                    <!-- Grid column -->
-                    <hr class="w-100 clearfix d-md-none" />
+                    <p class="text-center">Homless animal shelter The budgetary unit of the Capital City of Warsaw</p>
 
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                        <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-                    </div>
-                    <!-- Grid column -->
+                    <ul class="list-unstyled d-flex flex-row justify-content-center">
+                        <li>
+                            <a class="text-white px-2" href="#!">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white px-2" href="#!">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-white ps-2" href="#!">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+
                 </div>
-                <!--Grid row-->
-            </section>
-            <!-- Section: Links -->
+                <!--Grid column-->
 
-            <hr class="my-3">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Animals</h5>
 
-            <!-- Section: Copyright -->
-            <section class="p-3 pt-0">
-                <div class="row d-flex align-items-center">
-                    <!-- Grid column -->
-                    <div class="col-md-7 col-lg-8 text-center text-md-start">
-                        <!-- Copyright -->
-                        <div class="p-3">
-                            © 2020 Copyright:
-                            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-                        </div>
-                        <!-- Copyright -->
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
-                        <!-- Facebook -->
-                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-facebook-f"></i></a>
-
-                        <!-- Twitter -->
-                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-twitter"></i></a>
-
-                        <!-- Google -->
-                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-google"></i></a>
-
-                        <!-- Instagram -->
-                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <!-- Grid column -->
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>When your pet is missing</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Recently found</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>How to adopt?</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Pets for adoption</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Material gifts</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Help with walks</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Volunteer activities</a>
+                        </li>
+                    </ul>
                 </div>
-            </section>
-            <!-- Section: Copyright -->
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Animals</h5>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>General information</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>About the shelter</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Statistic data</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Job</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Tenders</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Contact</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p><i class="fas fa-map-marker-alt pe-2"></i>Warsaw, 57 Street, Poland</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-phone pe-2"></i>+ 01 234 567 89</p>
+                        </li>
+                        <li>
+                            <p><i class="fas fa-envelope pe-2 mb-0"></i>contact@example.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
         </div>
         <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
     </footer>
-    <!-- Footer -->
 
     <?php include '../Layout/scripts.php' ?>
 </body>

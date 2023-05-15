@@ -39,14 +39,6 @@
                         <li class="list-group-item">Personales:
                         <p></p>
 
-
-
-
-
-
-
-
-
                         </li>
                         <li class="list-group-item">Direcciones:</li>
                         <li class="list-group-item">Pagos:</li>

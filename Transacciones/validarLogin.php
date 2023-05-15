@@ -2,52 +2,36 @@
 // <!-- LOGICA PARA EJECUTAR EL LOGIN -->
 require '../Conection/cn.php';
 
-$errores = [];
-
 // Autenticar el usuario
 $email = mysqli_real_escape_string($db, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
 $password = mysqli_real_escape_string($db, $_POST['password']);
 
-if (!$email) {
 
-    $errores[] = "El Email es obligatorio o no es valido";
-}
+//revisar si el usuario existe
+$query = "SELECT * FROM usuarios WHERE email = '$email' ";
+$resultado = mysqli_query($db, $query);
 
-if (!$password) {
-    $errores[] = "El Password es obligatorio";
-}
+if ($resultado->num_rows) {
 
-if (empty($errores)) { //validar el usuario
+    //Revisar si el password es correcto
+    $usuario = mysqli_fetch_assoc($resultado);
+    //Verificar si el password es correcto o no
+    $auth = password_verify($password, $usuario['password']);
 
-    //revisar si el usuario existe
+    if ($auth) {
 
-    $query = "SELECT * FROM usuarios WHERE email = '$email' ";
-    $resultado = mysqli_query($db, $query);
+        //El usuario esta autenticado
+        session_start();
 
-    if ($resultado->num_rows) {
+        //LLenar el arreglo de la sesion
+        $_SESSION['usuario'] = $usuario['id_usuario'];
+        $_SESSION['rol'] = $usuario['id_rol'];
+        $_SESSION['nombre'] = $usuario['nombre'];
 
-        //Revisar si el password es correcto
-        $usuario = mysqli_fetch_assoc($resultado);
-        //Verificar si el password es correcto o no
-
-        $auth = password_verify($password, $usuario['password']);
-
-        if ($auth) {
-
-            //El usuario esta autenticado
-            session_start();
-
-            //LLenar el arreglo de la sesion
-             $_SESSION['usuario'] = $usuario['email'];
-             $_SESSION['login'] = true;
-
-            echo 'autenticado';
-
+        if ($_SESSION['rol'] != 1) {
+            header('Location:/soloarte/Paginas/Usuario/Productos.php');
         } else {
-
-            $errores[] = "La contraseña es incorrecta";
+            header('Location:/soloarte/Paginas/Admin');
         }
-    } else {
-        $errores[] = "El usuario no existe";
     }
 }
