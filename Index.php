@@ -74,7 +74,6 @@
     <h1>Bienvenido a SoloArte</h1>
 
     <?php
-    phpinfo();
     session_start();
 
     if (!$_SESSION) : ?>
