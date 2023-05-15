@@ -1,17 +1,16 @@
 <?php
-    session_start();
+session_start();
 
-    if (!isset($_SESSION['usuario'])){
-        header("Location: NoAutenticado.php");
-    }
+if (!isset($_SESSION['usuario'])) {
+    header("Location: NoAutenticado.php");
+}
 
-    if ($_SESSION['rol'] != 1) {
-        header("Location: NoAutorizado.php");
-        
-    }
-       
- ?>
- <!DOCTYPE html>
+if ($_SESSION['rol'] != 1) {
+    header("Location: NoAutorizado.php");
+}
+
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -107,7 +106,9 @@
                         <tr>
                             <td> <?php echo $row_producto['id_producto'] ?> </td>
                             <td> <?php echo $row_producto['nombre'] ?> </td>
-                            <td> <?php echo $row_producto['id_imagen'] ?> </td>
+                            <td>
+                                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregarimgModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>"><i class="fa-regular fa-images"></i> Agregar Imagenes</a>
+                            </td>
                             <td> <?php echo $row_producto['descripcion'] ?> </td>
                             <td> <?php echo $row_producto['precio'] ?> </td>
                             <td> <?php echo $row_producto['stock'] ?> </td>
@@ -133,29 +134,16 @@
     </div>
 
     <script src="../../Jquery/jquery-3.6.4.min.js"></script>
-
-
-    <!-- <script>
-        if (window.performance.navigation.type == 1) {
-            location.replace('http://localhost:8080/soloarte/Paginas/Admin/index.php');
-        } else if (window.performance.navigation.type == 2) {
-            location.replace('http://localhost:8080/soloarte/Paginas/Admin/index.php');
-        } else if (window.performance.navigation.type == 3) {
-            location.replace('http://localhost:8080/soloarte/Paginas/Admin/index.php');
-        }
-    </script> -->
-
-
-
+    
     <?php include '../../Modales/agregarModal.php'; ?>
     <?php include '../../Modales/actualizarModal.php'; ?>
     <?php include '../../Modales/EliminarModal.php'; ?>
-
-
+    <?php include '../../Modales/agregarimgModal.php'; ?>
 
     <script>
         let actualizarModal = document.getElementById('actualizarModal');
         let eliminarModal = document.getElementById('eliminarModal');
+        let agregarimgModal = document.getElementById('agregarimgModal');
 
 
         actualizarModal.addEventListener('shown.bs.modal', event => {
@@ -194,7 +182,20 @@
             eliminarModal.querySelector('.modal-footer #id').value = id;
 
         });
+
+        agregarimgModal.addEventListener('shown.bs.modal', event => {
+            let button = event.relatedTarget;
+            let id = button.getAttribute('data-bs-id');
+            eliminarModal.querySelector('.modal-footer #id').value = id;
+
+        });
     </script>
+
+
+
+
+
+
 
     <script>
         var $j = jQuery.noConflict();
