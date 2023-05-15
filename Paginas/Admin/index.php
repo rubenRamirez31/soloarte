@@ -3,17 +3,15 @@
 
     if (!isset($_SESSION['usuario'])){
         header("Location: NoAutenticado.php");
-
-
     }
 
-    if ($_SESSION['idUsuRol'] != 1) {
-
+    if ($_SESSION['rol'] != 1) {
         header("Location: NoAutorizado.php");
-
+        
     }
        
- ?><!DOCTYPE html>
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
