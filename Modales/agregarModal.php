@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../../Transacciones/agregar.php" method="POST" enctype="multipart/form-data">
+                <form action="../../Transacciones/agregar.php" method="POST">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre: </label>
                         <input type="text" name="nombre" id="nombre" class="form-control" required>
