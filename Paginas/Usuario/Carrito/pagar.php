@@ -59,4 +59,4 @@ if(isset($_SESSION['carrito'])){
 
 unset( $_SESSION["carrito"] ); 
 
-header("Location: ../Carrito de compra paso 6/index.php");
+header("Location: ../Productos.php");

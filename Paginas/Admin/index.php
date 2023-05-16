@@ -26,8 +26,6 @@ if ($_SESSION['rol'] != 1) {
 <body>
     <?php include '../../Layout/navbar.php' ?>
 
-    <?php var_dump($_SESSION)?>
-
     <?php
 
     $resultado = $_GET['resul'] ?? null;
