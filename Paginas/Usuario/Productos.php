@@ -189,39 +189,37 @@
 
 		<h1 class="text text-center">Productos</h1>
 
-        
- 
-<?php
-session_start();
-    $query = "select * from productos";
-    $productos = $db->query($query); 
-?>
- 
-<div class='row'>
-            <?php while ($row_productos = $productos->fetch_assoc()) :  ?>
-                <div class='col-4 mt-4'>
-                    <div class='card' style='width: 18rem;'>
-                    
-                        <ul class='list-group list-group-flush'>
-                        
-                            <li class='list-group-item'> <span style="font-weight: bold;"></span> <?php echo $row_productos['nombre'];?></li>
-                          
-                            <li class='list-group-item'> <span style="font-weight: bold;">Precio:</span> <?php echo $row_productos ['precio']; ?></li>
-                            
-                            <li class='list-group-item'> <span style="font-weight: bold;">En stock:</span> <?php echo $row_productos ['stock']; ?><span></span></li>
-                           
-                            <button class="btn btn-success" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
-                            <a href='../Usuario/DetallesProducto.php?idProducto= <?php echo $row_productos ['id_producto']; ?>' class='btn btn-primary'>Mas Detalles</a> 
+		<?php
+		session_start();
+		$query = "select * from productos";
+		$productos = $db->query($query);
+		?>
+
+		<div class='row'>
+			<?php while ($row_productos = $productos->fetch_assoc()) :  ?>
+				<div class='col-4 mt-4'>
+					<div class='card' style='width: 18rem;'>
+
+						<ul class='list-group list-group-flush'>
+
+							<li class='list-group-item'> <span style="font-weight: bold;"></span> <?php echo $row_productos['nombre']; ?></li>
+
+							<li class='list-group-item'> <span style="font-weight: bold;">Precio:</span> <?php echo $row_productos['precio']; ?></li>
+
+							<li class='list-group-item'> <span style="font-weight: bold;">En stock:</span> <?php echo $row_productos['stock']; ?><span></span></li>
+
+							<button class="btn btn-success" type="submit"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+							<a href='../Usuario/DetallesProducto.php?idProducto= <?php echo $row_productos['id_producto']; ?>' class='btn btn-primary'>Mas Detalles</a>
 
 
-								</span>
+							</span>
 
 
 
-							</ul>
-						</div>
+						</ul>
 					</div>
-				<?php endwhile ?>
+				</div>
+			<?php endwhile ?>
 			</form>
 		</div>
 
