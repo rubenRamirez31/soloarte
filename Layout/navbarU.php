@@ -84,16 +84,16 @@ session_start();
 
           <?php if ($_SESSION['rol'] === '1') : ?>
             <li class="nav-item p-3 py-md-1">
-              <a href="index.php" class="nav-link text-white"><i class="fa-solid fa-warehouse"></i> Productos</a>
+              <a href="/soloarte/Paginas/Admin" class="nav-link text-white"><i class="fa-solid fa-warehouse"></i> Productos</a>
             </li>
             <li class="nav-item p-3 py-md-1">
-              <a href="Usuarios.php" class="nav-link text-white"><i class="fa-solid fa-user"></i> Usuarios</a>
+              <a href="/soloarte/Paginas/Usuarios.php" class="nav-link text-white"><i class="fa-solid fa-user"></i> Usuarios</a>
             </li>
             <li class="nav-item p-3 py-md-1">
-              <a href="Envios.php" class="nav-link text-white"><i class="fa-solid fa-truck"></i> Envios</a>
+              <a href="/soloarte/Paginas/Admin/Envios.php" class="nav-link text-white"><i class="fa-solid fa-truck"></i> Envios</a>
             </li>
             <li class="nav-item p-3 py-md-1">
-              <a href="Solicitudes.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Solicitudes</a>
+              <a href="/soloarte/Paginas/Admin/Solicitudes.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Solicitudes</a>
             </li>
           <?php endif ?>
 
