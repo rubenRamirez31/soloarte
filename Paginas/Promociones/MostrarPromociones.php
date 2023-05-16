@@ -38,6 +38,7 @@ include("../../Conection/cn.php");
     <?php include '../../Layout/navbar.php' ?>
     <?php include '../../Layout/navbarU.php' ?>
 
+    <?php var_dump($_SESSION) ?>
     <?php
 
     $resultado = $_GET['resul'] ?? null;
@@ -77,7 +78,7 @@ include("../../Conection/cn.php");
     <div class="container mt-3">
         <h3 class="text text-center">Promociones Disponibles</h3>
 
-        <?php if ($_SESSION['idUsuRol'] == 1) :?>
+        <?php if ($_SESSION['rol'] == 1) :?>
         <div class="row justify-content-end">
 
             <div class="col-auto d-flex align-items-end mb-2">
@@ -130,7 +131,7 @@ include("../../Conection/cn.php");
 
 
                             <?php 
-                            if ($_SESSION['idUsuRol'] == 1) :?>
+                            if ($_SESSION['rol'] == 1) :?>
                                 
                                 <div>
                                     <a href="#"class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#actualizarpromoModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>">
@@ -144,9 +145,9 @@ include("../../Conection/cn.php");
                                 </div>
                                 <?php endif ?>
                             
-                            <?php if ($_SESSION['idUsuRol'] == 2) : ?>
-                                <a href='../Pages/ActualizarEvidencia.php?idEv= $p->Id' class='btn btn-primary'>Mas Informacion</a> 
-                                <a href='../Pages/EliminarEvidencia.php?idEv= $p->Id' class='btn btn-danger'>Comprar ahora!</a> 
+                            <?php if ($_SESSION['rol'] == 2) : ?>
+                                <a href='../Pages/ActualizarEvidencia.php?idEv= $p->Id' class='mt-3 btn btn-outline-primary'>Mas Informacion</a> 
+                                <a href='../Pages/EliminarEvidencia.php?idEv= $p->Id' class='mt-3 btn btn-outline-danger'>Comprar ahora!</a> 
                             
                             <?php endif ?>
 
