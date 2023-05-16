@@ -80,6 +80,9 @@ session_start();
             <li class="nav-item p-3 py-md-1">
               <a href="Solicitudes.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Mensajes</a>
             </li>
+            <li class="nav-item p-3 py-md-1">
+              <a href="../Chat/Ayuda.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Ayuda</a>
+            </li>
           <?php endif ?>
 
           <?php if ($_SESSION['rol'] === '1') : ?>
