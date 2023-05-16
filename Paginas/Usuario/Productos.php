@@ -75,8 +75,6 @@
     </div>
 
     <?php include '../../Layout/scripts.php' ?>
-
-
 </body>
 
 </html>
