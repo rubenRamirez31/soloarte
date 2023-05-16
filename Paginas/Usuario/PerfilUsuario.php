@@ -12,6 +12,17 @@
 <body>
     <?php include '../../Layout/navbarU.php' ?>
 
+    
+
+    <?php
+    include '../../Conection/cn.php';
+    $idusuario = $_SESSION['usuario'];
+    $query = "SELECT * FROM usuarios WHERE id_usuario = $idusuario ";
+    $usuarios = $db->query($query);
+    $datos = $usuarios->fetch_assoc();
+
+    ?>
+
     <div class="container mt-5">
         <div class="row justify-content-between">
             <div class="col-lg-2 col-sm-12 d-flex">
@@ -21,6 +32,7 @@
             </div>
 
             <div class="col-lg-8 col-sm-12 mb-5">
+                <?php var_dump($datos) ?>
                 <h1 class="text text-center">Mi Perfil</h1>
 
                 <div class="row justify-content-between mt-lg-5">
@@ -36,8 +48,21 @@
 
                 <div class=" container-sm border border-dark">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Personales:
-                        <p></p>
+                        <li class="list-group-item">
+                            <h5>Personales</h5>
+                            <h6>Nombre: </h6>
+                            <p> <?php echo $datos['nombre'] . " " . $datos['apepat'] . " " . $datos['apemat'] ?> </p>
+                            <h6>Correo: </h6>
+                            <p> <?php echo $datos['email'] ?> </p>
+                            <h6>Usuario: </h6>
+                            <p> <?php echo $datos['usuario'] ?> </p>
+                            <h6>Telefono: </h6>
+                            <?php if (!$datos['telefono']) : ?>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#AgregarNumModal" data-bs-id="<?php echo $datos['id_usuario']; ?>" class="btn btn-outline-warning"> <i class="fa-solid fa-plus"></i> Agregar</a>
+                            <?php endif ?>
+                            <?php if ($datos['telefono']) : ?>
+                                <p> <?php echo $datos['telefono'] ?> </p>
+                            <?php endif ?>
 
                         </li>
                         <li class="list-group-item">Direcciones:</li>
@@ -53,6 +78,19 @@
             </div>
         </div>
     </div>
+    <?php include '../../Modales/AgregarNumModal.php' ?>
+
+    <script>
+        let AgregarNumModal = document.getElementById('AgregarNumModal');
+
+        AgregarNumModal.addEventListener('shown.bs.modal', event => {
+            let button = event.relatedTarget;
+            let id = button.getAttribute('data-bs-id');
+            console.log(id);
+            AgregarNumModal.querySelector('.modal-body #id').value = id;
+
+        });
+    </script>
 
     <?php include '../../Layout/scripts.php' ?>
 </body>
