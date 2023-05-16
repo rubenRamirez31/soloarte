@@ -40,7 +40,7 @@ session_start();
                             <li class='list-group-item'> <span style="font-weight: bold;">Precio:</span> <?php echo $row_productos ['precio']; ?></li>
                             <li class='list-group-item'> <span style="font-weight: bold;">En stock:</span> <?php echo $row_productos ['stock']; ?><span></span></li>
                             <a href='..' class='btn btn-success'>Agregar al Carrito</a> 
-                            <a href='../Usuario/DetallesProducto.php?idProducto= $row_productos ["id_producto"]' class='btn btn-primary'>Mas Detalles</a> 
+                            <a href='../Usuario/DetallesProducto.php?idProducto= <?php echo $row_productos ['precio']; ?>' class='btn btn-primary'>Mas Detalles</a> 
 
 
                         </span> 

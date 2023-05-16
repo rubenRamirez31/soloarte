@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include '../../Layout/navbar.php' ?>
+    <?php include '../../Layout/navbarU.php' ?>
 
     <div class="container mt-5">
         <div class="row justify-content-between">
