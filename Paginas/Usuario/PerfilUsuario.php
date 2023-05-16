@@ -12,6 +12,8 @@
 <body>
     <?php include '../../Layout/navbarU.php' ?>
 
+    
+
     <?php
     include '../../Conection/cn.php';
     $idusuario = $_SESSION['usuario'];
@@ -56,7 +58,7 @@
                             <p> <?php echo $datos['usuario'] ?> </p>
                             <h6>Telefono: </h6>
                             <?php if (!$datos['telefono']) : ?>
-                                <a href="" class="btn btn-outline-warning"> <i class="fa-solid fa-plus"></i> Agregar</a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#AgregarNumModal" data-bs-id="<?php echo $datos['id_usuario']; ?>" class="btn btn-outline-warning"> <i class="fa-solid fa-plus"></i> Agregar</a>
                             <?php endif ?>
                             <?php if ($datos['telefono']) : ?>
                                 <p> <?php echo $datos['telefono'] ?> </p>
@@ -76,6 +78,19 @@
             </div>
         </div>
     </div>
+    <?php include '../../Modales/AgregarNumModal.php' ?>
+
+    <script>
+        let AgregarNumModal = document.getElementById('AgregarNumModal');
+
+        AgregarNumModal.addEventListener('shown.bs.modal', event => {
+            let button = event.relatedTarget;
+            let id = button.getAttribute('data-bs-id');
+            console.log(id);
+            AgregarNumModal.querySelector('.modal-body #id').value = id;
+
+        });
+    </script>
 
     <?php include '../../Layout/scripts.php' ?>
 </body>
