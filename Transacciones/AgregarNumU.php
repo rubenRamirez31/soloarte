@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER['$_POST']) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include '../Conection/cn.php';
 
     $idusuario = $_POST['id'];

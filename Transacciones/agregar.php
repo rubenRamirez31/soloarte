@@ -1,5 +1,5 @@
 <?php 
-if ($_SERVER['$_POST']) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require '../Conection/cn.php';
 
 $nombre = $db->real_escape_string($_POST['nombre']) ;

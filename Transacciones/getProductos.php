@@ -1,12 +1,7 @@
 <?php 
 
-if ($_SERVER['$_POST']) {
-    
-} else {
-    header('Location: /soloarte');
-}
-
-require '../Conection/cn.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require '../Conection/cn.php';
 
 $id = $db->real_escape_string($_POST['id']);
 
@@ -24,7 +19,6 @@ if ($rows > 0) {
 
 echo json_encode($producto, JSON_UNESCAPED_UNICODE);
 
-
-
-
-?>
+} else {
+    header('Location: /soloarte');
+}
