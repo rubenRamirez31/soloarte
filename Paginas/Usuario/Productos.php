@@ -2,64 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include '../../Layout/estilos.php'  ?>
-    <title>SoloArte</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php include '../../Layout/estilos.php'  ?>
+	<title>SoloArte</title>
 </head>
 
 <body>
-    <?php include '../../Layout/navbarU.php' ?>
+    <?php include '../../Layout/navbarU.php';
+
+    include("../Usuario/Carrito/nav_cart.php");
+    include("../Usuario/Carrito/modal_cart.php");
+
+    ?>
 
     <?php include '../../Conection/cn.php' ?>
+
+
 
     <div class="container mt-4">
 
         <h1 class="text text-center">Productos</h1>
 
-        <div class="card" style="width: 18rem;">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../../Images/CB1.jpg" class="d-block w-100 img-thumbnail" alt="...">
+
+
+        <?php
+
+        $query = "select * from productos";
+        $productos = $db->query($query);
+        ?>
+        <form id="formulario" name="formulario" method="post" action="../Usuario/Carrito/cart.php">
+            <div class='row'>
+
+
+                <?php while ($row_productos = $productos->fetch_assoc()) :  ?>
+                    <div class='col-4 mt-4'>
+                        <div class='card' style='width: 18rem;'>
+
+                            <ul class='list-group list-group-flush'>
+
+                                <input name="precio" type="hidden" id="precio" value="<?php echo $row_productos['precio']; ?>" />
+                                <input name="titulo" type="hidden" id="titulo" value="<?php echo $row_productos['nombre']; ?>" />
+                                <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+
+                                <li class='list-group-item'> <span style="font-weight: bold;"></span> <?php echo $row_productos['nombre']; ?></li>
+
+                                <li class='list-group-item'> <span style="font-weight: bold;">Precio:</span> <?php echo $row_productos['precio']; ?></li>
+
+                                <li class='list-group-item'> <span style="font-weight: bold;">En stock:</span> <?php echo $row_productos['stock']; ?><span></span></li>
+
+                                <button class="btn btn-success" type="submit"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                                <a href='../Usuario/DetallesProducto.php?idProducto= <?php echo $row_productos['id_producto']; ?>' class='btn btn-primary'>Mas Detalles</a>
+                                
+                                <a href='../Usuario/Carrito/ProductoSeleccionado.php?idProducto= <?php echo $row_productos['id_producto']; ?>' class='btn btn-success'>Añadir</a>
+
+
+                                </span>
+
+
+
+                            </ul>
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="../../Images/CB2.jpg" class="d-block w-100 img-thumbnail" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../../Images/CB3.jpg" class="d-block w-100 img-thumbnail" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <?php endwhile ?>
+
             </div>
 
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
+        </form>
 
 
     </div>
