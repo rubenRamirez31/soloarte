@@ -25,11 +25,11 @@
     // $id = $_GET['idProducto'];
 
     
-    // $query = "select * from productos where id_producto = $id";
-    // $producto = $db->query($query);
+    $query = "select * from productos where id_producto = $id";
+    $producto = $db->query($query);
     ?>
 
-    <h1 class="text text-center"> <?php echo $producto['nombre'];?></h1>
+    <h1 class="text text-center"> <?php echo $row_productos['nombre'];?></h1>
     
     
     <div class="row-2   ">
