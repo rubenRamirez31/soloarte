@@ -12,6 +12,8 @@
 <body>
     <?php include '../../Layout/navbarU.php';
 
+    var_dump($_SESSION);
+
     include("../Usuario/Carrito/nav_cart.php");
     include("../Usuario/Carrito/modal_cart.php");
 
