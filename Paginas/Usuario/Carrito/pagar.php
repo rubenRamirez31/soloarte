@@ -28,11 +28,9 @@ if(isset($_SESSION['carrito'])){
                     $cmd = $db->prepare($sql);
                     $res = $cmd->execute([$cantidad,$articulo,$precio,$total_precio,$estado,$idUsu]);
 
-                   // $sql_actualizar = "UPDATE productos
-                     //  SET cantidad = cantidad - ?
-                       //WHERE nombre = ?";
-                    //$cmd_actualizar = $db->prepare($sql_actualizar);
-                     //$res_actualizar = $cmd_actualizar->execute([$cantidad, $id_producto]);
+                    $sql_actualizar = "update productos set stock = stock - ? WHERE nombre = ?";
+                    $cmd_actualizar = $db->prepare($sql_actualizar);
+                    $res_actualizar = $cmd_actualizar->execute([$cantidad, $articulo]);
 
                     
            
