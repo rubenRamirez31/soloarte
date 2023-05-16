@@ -18,7 +18,7 @@ session_start();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Productos</a>
+          <a class="nav-link" aria-current="page" href="/soloarte/Paginas/Usuario/Productos.php">Productos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Cradores</a>
@@ -72,7 +72,7 @@ session_start();
 
           <?php if ( $_SESSION) : ?>
             <li  class="nav-item p-3 py-md-1">
-              <a href="Usuarios.php" class="nav-link text-white"><i class="fa-solid fa-user"></i> Mi Perfil</a>
+              <a href="/soloarte/Paginas/Usuario/PerfilUsuario.php" class="nav-link text-white"><i class="fa-solid fa-user"></i> Mi Perfil</a>
             </li>
             <li  class="nav-item p-3 py-md-1">
               <a href="Envios.php" class="nav-link text-white"><i class="fa-solid fa-truck"></i> Mis Envios</a>

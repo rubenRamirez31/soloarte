@@ -72,9 +72,12 @@ include("../../Conection/cn.php");
         </script>
 
     <?php endif; ?>
+
+
     <div class="container mt-3">
         <h3 class="text text-center">Promociones Disponibles</h3>
 
+        <?php if ($_SESSION['idUsuRol'] == 1) :?>
         <div class="row justify-content-end">
 
             <div class="col-auto d-flex align-items-end mb-2">
@@ -83,6 +86,8 @@ include("../../Conection/cn.php");
                         style="margin-right: 5px;"></i>Nueva Promocion</a>
             </div>
         </div>
+        <?php endif ?>
+
 
         <?php
 
