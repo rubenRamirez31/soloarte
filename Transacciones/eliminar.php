@@ -1,15 +1,16 @@
-<?php 
-require '../Conection/cn.php';
+<?php
 
-$id = $db->real_escape_string($_POST['id']);
+if ($_SERVER['$_POST']) {
+    require '../Conection/cn.php';
+    $id = $db->real_escape_string($_POST['id']);
+    $query = "DELETE FROM productos WHERE id_producto = $id ";
 
-$query = "DELETE FROM productos WHERE id_producto = $id ";
-
-if ($db->query($query)) {
-    header('Location: /Paginas/Admin/index.php?resul=3');
+    if ($db->query($query)) {
+        header('Location: /Paginas/Admin/index.php?resul=3');
+    } else {
+        echo 'error al insertar';
+        exit;
+    }
 } else {
-    echo 'error al insertar';
-    exit;
+    header('Location: /soloarte');
 }
-
-?>

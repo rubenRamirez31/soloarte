@@ -1,5 +1,6 @@
 <?php 
-require '../Conection/cn.php';
+if ($_SERVER['$_POST']) {
+    require '../Conection/cn.php';
 
 $nombre = $db->real_escape_string($_POST['nombre']) ;
 $descripcion = $db->real_escape_string($_POST['descripcion']) ;
@@ -15,5 +16,6 @@ if ($db->query($query)) {
     echo 'error al insertar';
     exit;
 }
-
-?>
+} else {
+    header('Location: /soloarte');
+}

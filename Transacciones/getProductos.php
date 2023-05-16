@@ -1,5 +1,11 @@
 <?php 
 
+if ($_SERVER['$_POST']) {
+    
+} else {
+    header('Location: /soloarte');
+}
+
 require '../Conection/cn.php';
 
 $id = $db->real_escape_string($_POST['id']);
