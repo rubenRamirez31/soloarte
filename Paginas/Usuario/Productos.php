@@ -49,8 +49,10 @@
                             
                             <li class='list-group-item'> <span style="font-weight: bold;">En stock:</span> <?php echo $row_productos ['stock']; ?><span></span></li>
                            
-                            <button class="btn btn-success" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                            
                             <a href='../Usuario/DetallesProducto.php?idProducto= <?php echo $row_productos ['id_producto']; ?>' class='btn btn-primary'>Mas Detalles</a> 
+
+                            <a href='../Usuario//Carrito/ProductoSeleccionado.php?idProducto= <?php echo $row_productos ['id_producto']; ?>' class='btn btn-success fas fa-shopping-cart'></i></a> 
 
 
                                 </span>
