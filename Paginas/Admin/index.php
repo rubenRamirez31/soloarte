@@ -163,7 +163,7 @@ if ($_SESSION['rol'] != 1) {
     <?php include '../../Modales/verimgModal.php'; ?>
 
     <script>
-        let actualizarModal = document.getElementById('actualizarModal');
+        let actualizarModal = document.getElementById('actualizarModal');   
         let eliminarModal = document.getElementById('eliminarModal');
         let agregarimgModal = document.getElementById('agregarimgModal');
         let verimgModal= document.getElementById('verimgModal');
