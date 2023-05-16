@@ -157,10 +157,10 @@ include("../../Conection/cn.php");
 
 
 
-    <?php include '/Modales/Promociones/agregarpromoModal.php'; ?>
-    <?php include '/Modales/actualizarpromoModal.php'; ?>
-    <?php include '/Modales/eliminarpromoModal.php'; ?>
-    <?php include '/Modales/agregarimgpromoModal.php'; ?>
+    <?php include '../../Modales/agregarpromoModal.php'; ?>
+    <?php include '../../Modales/actualizarpromoModal.php'; ?>
+    <?php include '../../Modales/eliminarpromoModal.php'; ?>
+    <?php include '../../Modales/agregarimgpromoModal.php'; ?>
 
     <script>
         let actualizarpromoModal = document.getElementById('actualizarpromoModal');
