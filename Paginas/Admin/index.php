@@ -61,14 +61,14 @@ if ($_SESSION['rol'] != 1) {
         </script>
 
     <?php elseif ($resultado === "4") : ?>
-            <script>
-                Swal.fire(
+        <script>
+            Swal.fire(
                 'Imagenes Agregadas Correctamente',
                 '',
                 'success'
             );
-            </script>
-        <?php endif ?>
+        </script>
+    <?php endif ?>
 
 
 
@@ -114,8 +114,21 @@ if ($_SESSION['rol'] != 1) {
                         <tr>
                             <td> <?php echo $row_producto['id_producto'] ?> </td>
                             <td> <?php echo $row_producto['nombre'] ?> </td>
-                            <td>
-                                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregarimgModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>"><i class="fa-regular fa-images"></i> Agregar Imagenes</a>
+
+                            <?php
+                            $query = "SELECT * FROM imagenes WHERE id_producto = " . $row_producto['id_producto'];
+                            $resultado = mysqli_query($db, $query);
+                            ?>
+                            <td class="">
+                                <?php if (!$resultado->num_rows) : ?>
+                                    <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregarimgModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>"><i class="fa-regular fa-images"></i> Agregar Imagenes</a>
+                                <?php endif ?>
+
+                                <?php if ($resultado->num_rows >= 1) : ?>
+                                    <!-- <a href="#" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#verimgModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>"><i class="fa-regular fa-eye"></i> Ver Imagenes</a> -->
+                                    <a href="verimg.php?id=<?php echo $row_producto['id_producto'] ?>" class="btn btn-outline-dark"><i class="fa-regular fa-eye"></i> Ver Imagenes</a>
+                                    <?php endif ?>
+
                             </td>
                             <td> <?php echo $row_producto['descripcion'] ?> </td>
                             <td> <?php echo $row_producto['precio'] ?> </td>
@@ -142,16 +155,18 @@ if ($_SESSION['rol'] != 1) {
     </div>
 
     <script src="../../Jquery/jquery-3.6.4.min.js"></script>
-    
+
     <?php include '../../Modales/agregarModal.php'; ?>
     <?php include '../../Modales/actualizarModal.php'; ?>
     <?php include '../../Modales/EliminarModal.php'; ?>
     <?php include '../../Modales/agregarimgModal.php'; ?>
+    <?php include '../../Modales/verimgModal.php'; ?>
 
     <script>
         let actualizarModal = document.getElementById('actualizarModal');
         let eliminarModal = document.getElementById('eliminarModal');
         let agregarimgModal = document.getElementById('agregarimgModal');
+        let verimgModal= document.getElementById('verimgModal');
 
 
         actualizarModal.addEventListener('shown.bs.modal', event => {
@@ -195,6 +210,14 @@ if ($_SESSION['rol'] != 1) {
             let button = event.relatedTarget;
             let id = button.getAttribute('data-bs-id');
             agregarimgModal.querySelector('.modal-footer #id').value = id;
+
+        });
+
+        verimgModal.addEventListener('shown.bs.modal', event => {
+            let button = event.relatedTarget;
+            let id = button.getAttribute('data-bs-id');
+            console.log(id);
+            // verimgModal.querySelector('.modal-footer #id').value = id;
 
         });
     </script>
