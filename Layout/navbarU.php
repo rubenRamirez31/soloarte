@@ -21,7 +21,7 @@ session_start();
           <a class="nav-link" aria-current="page" href="/soloarte/Paginas/Usuario/Productos.php">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cradores</a>
+          <a class="nav-link" href="/soloarte/Paginas/Creadores/MostrarCreadores.php">Cradores</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>

@@ -134,7 +134,9 @@ if ($_SESSION['rol'] != 1) {
                             <td> <?php echo $row_producto['stock'] ?> </td>
                             <td class=" d-lg-flex justify-content-around">
                                 <div>
-                                    <a href="#" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#actualizarModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>">
+                                    <a href="#" class="btn btn-outline-warning" data-bs-toggle="modal" 
+                                    data-bs-target="#actualizarModal" 
+                                    data-bs-id="<?php echo $row_producto['id_producto'] ?>">
                                         <i class="fa-solid fa-pen-to-square"></i> Actualizar</a>
 
                                 </div>
