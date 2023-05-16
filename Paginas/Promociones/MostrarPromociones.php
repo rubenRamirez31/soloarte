@@ -1,25 +1,25 @@
 <?php
 
-session_start();
+//Ssession_start();
 
 include("../../Conection/cn.php");
 
 ?>
-<!-- <?php
+<?php
 
 
-//if (!isset($_SESSION['usuario'])) {
-//header("Location: NoAutenticado.php");
+// if (!isset($_SESSION['usuario'])) {
+// header("Location: NoAutenticado.php");
 
 
 // }
 
-// if ($_SESSION['idUsuRol'] != 1) {
+// if ($_SESSION['rol'] != 1) {
 
 //     header("Location: NoAutorizado.php");
 
 // }
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +35,9 @@ include("../../Conection/cn.php");
 </head>
 
 <body>
-    <?php include '../../Layout/navbar.php' ?>
+    <?php //include '../../Layout/navbar.php' ?>
     <?php include '../../Layout/navbarU.php' ?>
+
 
     <?php
 
@@ -77,15 +78,15 @@ include("../../Conection/cn.php");
     <div class="container mt-3">
         <h3 class="text text-center">Promociones Disponibles</h3>
 
-        <?php if ($_SESSION['idUsuRol'] == 1) :?>
-        <div class="row justify-content-end">
+        <?php if ($_SESSION['rol'] == 1): ?>
+            <div class="row justify-content-end">
 
-            <div class="col-auto d-flex align-items-end mb-2">
-                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
-                    data-bs-target="#agregarpromoModal"><i class="fa-solid fa-circle-plus mr-1"
-                        style="margin-right: 5px;"></i>Nueva Promocion</a>
+                <div class="col-auto d-flex align-items-end mb-2">
+                    <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
+                        data-bs-target="#agregarpromoModal"><i class="fa-solid fa-circle-plus mr-1"
+                            style="margin-right: 5px;"></i>Nueva Promocion</a>
+                </div>
             </div>
-        </div>
         <?php endif ?>
 
 
@@ -100,19 +101,14 @@ include("../../Conection/cn.php");
             <?php while ($row_promociones = $promociones->fetch_assoc()): ?>
                 <div class='col-4 mt-4'>
                     <div class='card' style='width: 18rem;'>
-
-
                         <?php
-
                         $imageData = $row_promociones['imagen'];
-
                         if (!empty($imageData)) {
                             // Encode the image data using base64
                             $encodedImage = base64_encode($imageData);
                             // Embed the encoded image in the img tag using the data URI scheme
                             echo "<img src='data:image/jpeg;base64,$encodedImage' class='card-img-top' alt='N/A'>";
                         }
-
                         ?>
 
                         <ul class='list-group list-group-flush'>
@@ -129,48 +125,42 @@ include("../../Conection/cn.php");
                             </li>
 
 
-                            <?php 
-                            if ($_SESSION['idUsuRol'] == 1) :?>
-                                
+                            <?php
+                            if ($_SESSION['rol'] == 1): ?>
+
                                 <div>
-                                    <a href="#"class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#actualizarpromoModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>">
+                                    <a href="#" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                        data-bs-target="#actualizarpromoModal"
+                                        data-bs-id="<?php echo $row_producto['id_producto'] ?>">
                                         <i class="fa-solid fa-pen-to-square"></i> Actualizar</a>
 
                                 </div>
                                 <div>
-                                    <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarprpmoModal" data-bs-id="<?php echo $row_producto['id_producto'] ?>">
-                                    <i class="fa-solid fa-trash"></i> Eliminar</a>
+                                    <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                        data-bs-target="#eliminarprpmoModal"
+                                        data-bs-id="<?php echo $row_producto['id_producto'] ?>">
+                                        <i class="fa-solid fa-trash"></i> Eliminar</a>
 
                                 </div>
-                                <?php endif ?>
-                            
-                            <?php if ($_SESSION['idUsuRol'] == 2) : ?>
-                                <a href='../Pages/ActualizarEvidencia.php?idEv= $p->Id' class='btn btn-primary'>Mas Informacion</a> 
-                                <a href='../Pages/EliminarEvidencia.php?idEv= $p->Id' class='btn btn-danger'>Comprar ahora!</a> 
-                            
                             <?php endif ?>
 
-
-
+                            <?php if ($_SESSION['rol'] == 2): ?>
+                                <a href=' <?php echo $row_promociones['Link']; ?>' class='mt-3 btn btn-outline-primary'>Mas Información</a>
+                            <?php endif ?>
                         </ul>
                     </div>
                 </div>
-
-
-                </span>
-
-
-
-                </ul>
-            </div>
+            <?php endwhile ?>
         </div>
-    <?php endwhile ?>
+    
     </div>
 
-    <?php include '../../Modales/agregarpromoModal.php'; ?>
-    <?php include '../../Modales/actualizarpromoModal.php'; ?>
-    <?php include '../../Modales/eliminarpromoModal.php'; ?>
-    <?php include '../../Modales/agregarimgpromoModal.php'; ?>
+
+
+    <?php include '/Modales/Promociones/agregarpromoModal.php'; ?>
+    <?php include '/Modales/actualizarpromoModal.php'; ?>
+    <?php include '/Modales/eliminarpromoModal.php'; ?>
+    <?php include '/Modales/agregarimgpromoModal.php'; ?>
 
     <script>
         let actualizarpromoModal = document.getElementById('actualizarpromoModal');
@@ -185,7 +175,7 @@ include("../../Conection/cn.php");
             let inputNombre = actualizarpromoModal.querySelector('.modal-body #nombre');
             let inputDescripcion = actualizarpromoModal.querySelector('.modal-body #descripcion');
             let inputLink = actualizarpromoModal.querySelector('.modal-body #link');
-            
+
 
             let url = "../../Transacciones/-------.php";
 
@@ -193,14 +183,14 @@ include("../../Conection/cn.php");
             formData.append('id', id);
 
             fetch(url, {
-                    method: "POST",
-                    body: formData
-                }).then(response => response.json())
+                method: "POST",
+                body: formData
+            }).then(response => response.json())
                 .then(data => {
                     inputNombre.value = data.nombre
                     inputDescripcion.value = data.descripcion
                     inputPrecio.value = data.link
-                  
+
 
                 }).catch(err => console.log(err))
         });

@@ -7,7 +7,7 @@
 
     }
 
-    if ($_SESSION['idUsuRol'] != 1) {
+    if ($_SESSION['rol'] != 1) {
 
         header("Location: NoAutorizado.php");
 
