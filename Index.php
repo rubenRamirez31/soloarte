@@ -27,10 +27,10 @@
             <a class="nav-link" aria-current="page" href="Paginas/Usuario/Productos.php">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cradores</a>
+            <a class="nav-link" href="Paginas/Creadores/MostrarCreadores.php">Cradores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Promociones</a>
+            <a class="nav-link" href="Paginas/Promociones/MostrarPromociones.php">Promociones</a>
           </li>
         </ul>
         <!-- <form class="d-flex">
