@@ -26,6 +26,7 @@ if ($_SESSION['rol'] != 1) {
 <body>
     <?php include '../../Layout/navbar.php' ?>
 
+    <?php var_dump($_SESSION)?>
 
     <?php
 
@@ -160,15 +161,12 @@ if ($_SESSION['rol'] != 1) {
     <?php include '../../Modales/actualizarModal.php'; ?>
     <?php include '../../Modales/EliminarModal.php'; ?>
     <?php include '../../Modales/agregarimgModal.php'; ?>
-    <?php include '../../Modales/verimgModal.php'; ?>
 
     <script>
         let actualizarModal = document.getElementById('actualizarModal');   
         let eliminarModal = document.getElementById('eliminarModal');
         let agregarimgModal = document.getElementById('agregarimgModal');
-        let verimgModal= document.getElementById('verimgModal');
-
-
+  
         actualizarModal.addEventListener('shown.bs.modal', event => {
             let button = event.relatedTarget;
             let id = button.getAttribute('data-bs-id');
@@ -213,13 +211,7 @@ if ($_SESSION['rol'] != 1) {
 
         });
 
-        verimgModal.addEventListener('shown.bs.modal', event => {
-            let button = event.relatedTarget;
-            let id = button.getAttribute('data-bs-id');
-            console.log(id);
-            // verimgModal.querySelector('.modal-footer #id').value = id;
 
-        });
     </script>
 
 

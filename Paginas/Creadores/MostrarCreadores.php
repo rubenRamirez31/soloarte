@@ -14,12 +14,6 @@ session_start();
 
     }
 
-    if ($_SESSION['idUsuRol'] != 1) {
-
-        header("Location: NoAutorizado.php");
-
-    }
-       
  ?>
 
 <!DOCTYPE html>
