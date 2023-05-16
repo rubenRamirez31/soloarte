@@ -28,7 +28,6 @@
         
  
 <?php
-session_start();
     $query = "select * from productos";
     $productos = $db->query($query); 
 ?>
@@ -36,7 +35,7 @@ session_start();
 <div class='row'>
             <?php while ($row_productos = $productos->fetch_assoc()) :  ?>
                 <!-- <div class='col-4 mt-4'> -->
-				<div class='col-sm-12 col-md-4'>
+				<div class='col-sm-12 col-md-4 d-flex justify-content-center mt-4 mb-4'>
 				<!-- <div class='col-sm-16 col-md-4'>	 -->
                     <div class='card' style='width: 18rem;'>
                     
