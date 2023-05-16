@@ -70,19 +70,19 @@ session_start();
       <div class="offcanvas-body d-flex flex-column justify-content-between px-0">
         <ul class="navbar-nav fs-5 justify-content-evenly">
 
-          <?php if ( $_SESSION) : ?>
-            <li  class="nav-item p-3 py-md-1">
+          <?php if ($_SESSION['rol'] === '2') : ?>
+            <li class="nav-item p-3 py-md-1">
               <a href="/soloarte/Paginas/Usuario/PerfilUsuario.php" class="nav-link text-white"><i class="fa-solid fa-user"></i> Mi Perfil</a>
             </li>
-            <li  class="nav-item p-3 py-md-1">
+            <li class="nav-item p-3 py-md-1">
               <a href="Envios.php" class="nav-link text-white"><i class="fa-solid fa-truck"></i> Mis Envios</a>
             </li>
-            <li  class="nav-item p-3 py-md-1">
+            <li class="nav-item p-3 py-md-1">
               <a href="Solicitudes.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Mensajes</a>
             </li>
           <?php endif ?>
 
-          <!-- <?php if (isset($_SESSION)) : ?>
+          <?php if ($_SESSION['rol'] === '1') : ?>
             <li class="nav-item p-3 py-md-1">
               <a href="index.php" class="nav-link text-white"><i class="fa-solid fa-warehouse"></i> Productos</a>
             </li>
@@ -95,7 +95,7 @@ session_start();
             <li class="nav-item p-3 py-md-1">
               <a href="Solicitudes.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Solicitudes</a>
             </li>
-          <?php endif ?> -->
+          <?php endif ?>
 
 
         </ul>
