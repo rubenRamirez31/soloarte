@@ -199,6 +199,9 @@ session_start();
  
 <div class='row'>
             <?php while ($row_productos = $productos->fetch_assoc()) :  ?>
+				<div class="container mx">
+
+				</div>
                 <!-- <div class='col-4 mt-4'> -->
 				<div class='col-sm-12 col-md-4'>
 				<!-- <div class='col-sm-16 col-md-4'>	 -->
