@@ -15,7 +15,6 @@
 <body>
   <!-- NAVBAR -->
 
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">Solo Arte</a>
@@ -28,10 +27,10 @@
             <a class="nav-link" aria-current="page" href="Paginas/Usuario/Productos.php">Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cradores</a>
+            <a class="nav-link" href="Paginas/Creadores/MostrarCreadores.php">Cradores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Promociones</a>
+            <a class="nav-link" href="Paginas/Promociones/MostrarPromociones.php">Promociones</a>
           </li>
         </ul>
         <!-- <form class="d-flex">
@@ -74,10 +73,8 @@
   <!-- Contenido principal -->
   <div class="container mt-5">
     <h1>Bienvenido a SoloArte</h1>
-
     <?php
     session_start();
-
     if (!$_SESSION) : ?>
 
       <div class="d-flex">
