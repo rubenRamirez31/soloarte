@@ -15,7 +15,6 @@
 <body>
   <!-- NAVBAR -->
 
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">Solo Arte</a>
@@ -74,10 +73,8 @@
   <!-- Contenido principal -->
   <div class="container mt-5">
     <h1>Bienvenido a SoloArte</h1>
-
     <?php
     session_start();
-
     if (!$_SESSION) : ?>
 
       <div class="d-flex">
