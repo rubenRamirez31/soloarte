@@ -64,7 +64,7 @@
      
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <a type="button" class="btn btn-primary" href="../Usuario/Carrito/borrarcarro.php">Vaciar carrito</a>
-        <a type="button" class="btn btn-success" href="../Carrito de compra paso 2/index.php">Continuar pedido</a>
+        <a type="button" class="btn btn-success" href="../Usuario/Carrito/VerificarCompra.php">Continuar pedido</a>
       </div>
     </div>
   </div>
