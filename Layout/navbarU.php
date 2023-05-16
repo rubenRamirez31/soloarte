@@ -24,7 +24,7 @@ session_start();
           <a class="nav-link" href="#">Cradores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Promociones</a>
+          <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>
         </li>
 
         <li class="nav-item">
