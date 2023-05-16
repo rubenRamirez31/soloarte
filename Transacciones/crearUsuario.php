@@ -30,8 +30,8 @@ if ($resultado->num_rows >= 1) {
     $query = "INSERT INTO usuarios (nombre,apepat,apemat,email,password,usuario,id_rol) VALUES ('$nombre','$apepat','$apemat','$emaillower','$passwordHash','$usuario','$rol')";
     //agregarlo a la base de datos
     if ($db->query($query)) {
-        header('Location: /soloarte/Paginas/login.php?resul=1');
+        header('Location: ../../Paginas/login.php?resul=1');
     } else {
-        header('Location: /soloarte/Paginas/crearUsuario.php?resul=2');
+        header('Location:/soloarte/Paginas/crearUsuario.php?resul=2');
     }
 }
