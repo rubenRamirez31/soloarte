@@ -7,27 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Producto</title>
 
-    <?php include '../Layout/estilos.php' ?>
+    <?php include '../../Layout/estilos.php' ?>
 
 </head>
 
 <body>
-    <?php include '../Layout/navbar.php' ?>
+    <?php include '../../Layout/navbar.php' ?>
 
     <?php
-        session_start();
+        //  session_start();
 
     //conexion para la base de datos y consultar los productos
     
     require '../../Conection/cn.php';
 
 
-    $id = $_GET['idProducto'];
+    // $id = $_GET['idProducto'];
 
     
     $query = "select * from productos where id_producto = $id";
     $producto = $db->query($query);
-    $row_productos = $producto->fetch_assoc();
     ?>
 
     <h1 class="text text-center"> <?php echo $row_productos['nombre'];?></h1>
