@@ -11,10 +11,9 @@
                     <input type="hidden" name="id" id="id">
                     <label for="file-input">Sube Tus Archivos</label>
                     <input type="file" name="imagenes[]" class="form-control" multiple accept=".jpg, .png" id="file-input" required>
-                        <!-- <div class=" d-flex justify-content-end">
+                        <div class=" d-flex justify-content-end">
                             <button type="button" class="btn btn-outline-warning mt-1" id="btnlimpiar">Limpiar</button>
-                        </div> -->
-
+                        </div>
                     <div class="mt-2 d-flex justify-content-end">
                         <button type="button" class="btn btn-outline-danger" style="margin-right: 5px;" data-bs-dismiss="modal"><i class="fa-solid fa-xmark" style="margin-right: 2px;"></i>Cancelar</button>
                         <button type="submit" class="btn btn-outline-success"><i class="fa-solid fa-plus"></i> Agregar</button>

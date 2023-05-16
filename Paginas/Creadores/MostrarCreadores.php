@@ -42,14 +42,9 @@ session_start();
 
  
 <?php
-
-
-
-
-
     $query = "select * from Creadores";
     $creadores = $db->query($query);
-   
+ 
 ?>
 
        <div class='row'>
