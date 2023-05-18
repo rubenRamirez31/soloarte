@@ -139,7 +139,7 @@
 
             <div class="col-lg-2 col-sm-12 d-flex justify-content-center ">
                 <div class="container d-flex justify-content-center" style="max-height: 40px;">
-                    <a class="btn btn-primary">Asociarme</a>
+                    <a href="formulario.php" class="btn btn-primary">Asociarme</a>
                 </div>
             </div>
         </div>
