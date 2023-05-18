@@ -4885,6 +4885,77 @@ fieldset:disabled .btn {
 }
 
 /*Chat Boot*/
+        /* Estilos generales */
+        .container {
+          max-width: 100%;
+          padding: 0 20px;
+      }
+      
+      .chatbox {
+          background: #fff;
+          border-radius: 5px;
+          padding: 20px;
+          margin-top: 20px;
+      }
+      
+      .header {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      
+      .header h4 {
+          margin: 0;
+      }
+      
+      .body {
+          height: 300px;
+          overflow-y: auto;
+          margin-bottom: 20px;
+      }
+      
+      .scroller {
+          height: 100%;
+      }
+      
+      .chat {
+          display: flex;
+          justify-content: space-between;
+      }
+      
+      .chat input[type="text"],
+      .chat input[type="submit"] {
+          padding: 10px;
+          font-size: 14px;
+          border-radius: 5px;
+          border: none;
+      }
+      
+      .chat input[type="text"] {
+          flex-grow: 1;
+          margin-right: 10px;
+      }
+      
+      .chat input[type="submit"] {
+          background-color: #4CAF50;
+          color: #fff;
+          cursor: pointer;
+      }
+      
+      /* Estilos responsivos */
+      @media (max-width: 768px) {
+          .chatbox {
+              padding: 10px;
+          }
+      
+          .body {
+              height: 200px;
+          }
+      
+          .chat input[type="text"],
+          .chat input[type="submit"] {
+              font-size: 12px;
+          }
+        }
 .mensaje-icono {
   position: fixed;
   bottom: 20px; /* Ajusta la posición vertical según tus necesidades */

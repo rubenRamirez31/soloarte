@@ -13,6 +13,7 @@
     <?php include '../../Layout/navbarU.php';
 
 
+
     include("../Usuario/Carrito/nav_cart.php");
     include("../Usuario/Carrito/modal_cart.php");
 
@@ -22,6 +23,11 @@
 
 
 
+    <div id="botonFlotante" style="position: fixed; bottom: 20px; right: 20px; display: block;">
+        <a href="../Chat/Ayuda.php" class="btn btn bg bg-rosaMX">
+            <img src="../../Images/Chat/chat.jpg" alt="chat" width="52" height="52">
+        </a>
+    </div>
     <div class="container mt-4">
 
         <h1 class="text text-center">Productos</h1>
@@ -48,7 +54,7 @@
                             <li class='list-group-item'> <span style="font-weight: bold;">En stock:</span> <?php echo $row_productos['stock']; ?><span></span></li>
 
 
-                            
+
 
 
                             <form id="formulario" name="formulario" method="post" action="../Usuario/Carrito/cart.php">
