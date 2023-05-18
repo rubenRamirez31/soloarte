@@ -99,7 +99,7 @@ include("../../Conection/cn.php");
 
         <div class='row'>
             <?php while ($row_promociones = $promociones->fetch_assoc()): ?>
-                <div class='col-4 mt-4'>
+                <div class='col-sm-12 col-md-4 d-flex justify-content-center mt-4 mb-4'>
                     <div class='card' style='width: 18rem;'>
                         <?php
                         $imageData = $row_promociones['imagen'];
@@ -129,38 +129,37 @@ include("../../Conection/cn.php");
                             if ($_SESSION['rol'] == 1): ?>
 
                                 <div>
-                                    <a href="#" class="btn btn-outline-warning" data-bs-toggle="modal"
+                                    <a href="#" class="mt-3 btn btn-outline-warning" data-bs-toggle="modal"
                                         data-bs-target="#actualizarpromoModal"
-                                        data-bs-id="<?php echo $row_producto['id_producto'] ?>">
+                                        data-bs-id="<?php echo $row_promociones['Id_Promocion'] ?>">
                                         <i class="fa-solid fa-pen-to-square"></i> Actualizar</a>
+                                    <a href="#" class="mt-3 btn btn-outline-danger" data-bs-toggle="modal"
+                                        data-bs-target="#eliminarprpmoModal"
+                                        data-bs-id="<?php echo $row_promociones['Id_Promocion'] ?>">
+                                        <i class="fa-solid fa-trash"></i> Eliminar</a>
 
                                 </div>
                                 <div>
-                                    <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal"
-                                        data-bs-target="#eliminarprpmoModal"
-                                        data-bs-id="<?php echo $row_producto['id_producto'] ?>">
-                                        <i class="fa-solid fa-trash"></i> Eliminar</a>
+
 
                                 </div>
                             <?php endif ?>
 
                             <?php if ($_SESSION['rol'] == 2): ?>
-                                <a href=' <?php echo $row_promociones['Link']; ?>' class='mt-3 btn btn-outline-primary'>Mas Información</a>
+                                <a href=' <?php echo $row_promociones['Link']; ?>' class='mt-3 btn btn-outline-primary'>Mas
+                                    Información</a>
                             <?php endif ?>
                         </ul>
                     </div>
                 </div>
             <?php endwhile ?>
         </div>
-    
+
     </div>
-
-
-
-    <?php include '/Modales/Promociones/agregarpromoModal.php'; ?>
-    <?php include '/Modales/actualizarpromoModal.php'; ?>
-    <?php include '/Modales/eliminarpromoModal.php'; ?>
-    <?php include '/Modales/agregarimgpromoModal.php'; ?>
+    <?php include '../../Modales/agregarpromoModal.php'; ?>
+    <?php include '../../Modales/actualizarpromoModal.php'; ?>
+    <?php include '../../Modales/eliminarpromoModal.php'; ?>
+    <?php include '../../Modales/agregarimgpromoModal.php'; ?>
 
     <script>
         let actualizarpromoModal = document.getElementById('actualizarpromoModal');
@@ -172,12 +171,13 @@ include("../../Conection/cn.php");
             let button = event.relatedTarget;
             let id = button.getAttribute('data-bs-id');
 
+            let inputId = actualizarpromoModal.querySelector('.modal-body #id');
             let inputNombre = actualizarpromoModal.querySelector('.modal-body #nombre');
             let inputDescripcion = actualizarpromoModal.querySelector('.modal-body #descripcion');
             let inputLink = actualizarpromoModal.querySelector('.modal-body #link');
 
 
-            let url = "../../Transacciones/-------.php";
+            let url = "../../Transacciones/Promociones/getPromociones.php";
 
             let formData = new FormData();
             formData.append('id', id);
@@ -187,9 +187,10 @@ include("../../Conection/cn.php");
                 body: formData
             }).then(response => response.json())
                 .then(data => {
+                    inputId.value = data.Id_Promocion
                     inputNombre.value = data.nombre
                     inputDescripcion.value = data.descripcion
-                    inputPrecio.value = data.link
+                    inputLink.value = data.Link
 
 
                 }).catch(err => console.log(err))
