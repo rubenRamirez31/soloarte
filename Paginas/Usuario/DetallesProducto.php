@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+
+    if (!isset($_SESSION['usuario'])){
+        header("Location: /soloarte/Paginas/Admin/NoAutenticado.php");
+
+
+    }
+ 
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
