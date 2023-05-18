@@ -19,7 +19,7 @@
           <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../Transacciones/cerrarSesion.php">Cerrar Sesión</a>
+          <a class="nav-link" href="Transacciones/cerrarSesion.php">Cerrar Sesión</a>
         </li>
       </ul>
     </div>
