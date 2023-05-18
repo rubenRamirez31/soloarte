@@ -1,13 +1,3 @@
-<?php
-
-include("../SoloArte/Layout/estilos.php");
-
-
-?>
-<?php include '../SoloArte/Layout/navbarU.php' ?>
-
-
-
 <!DOCTYPE html>
 
 <html lang="es">
@@ -24,6 +14,46 @@ include("../SoloArte/Layout/estilos.php");
 </head>
 
 <body>
+<nav class=" navbar navbar-expand-lg  sticky-top  navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/soloarte">Solo Arte</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/soloarte/Paginas/Usuario/Productos.php">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/soloarte/Paginas/Creadores/MostrarCreadores.php">Craedores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>
+        </li>
+<?php session_start() ?>
+        <?php if (isset($_SESSION['nombre'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="Transacciones/cerrarSesion.php">Cerrar Sesión</a>
+          </li>
+        <?php endif ?>
+        
+        <?php if (!$_SESSION) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="Paginas/login.php">Iniciar Sesión</a>
+          </li>
+          <li>
+          <a class="nav-link" href="Paginas/crearUsuario.php">Registrate</a>
+          </li>
+        <?php endif ?>
+
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
   <!-- Carrusel de imágenes -->
@@ -69,24 +99,7 @@ include("../SoloArte/Layout/estilos.php");
 
     <div class="container mt-5" style="background-color: rgba(255, 255, 255, 0.5);">
       <h1>Bienvenido a SoloArte</h1>
-      <?php
-
-      if (!$_SESSION) : ?>
-
-        <div class="d-flex">
-          <p class="mt-2">¿No tienes cuenta?</p>
-          <a href="Paginas/crearUsuario.php" class="btn btn-outline-dark mx-1">Registrate</a>
-        </div>
-        <div class="d-flex mt-2">
-          <p class="mt-2">¿Ya cuentas con una?</p>
-          <a href="Paginas/login.php" class="btn btn-outline-dark mx-1"> Inicia Sesión</a>
-        </div>
-      <?php endif ?>
-
-      <?php if (isset($_SESSION)) : ?>
-
-
-      <?php endif ?>
+      
       <p>¡Encuentra los mejores productos al mejor precio en nuestra tienda en línea! Explora nuestra amplia selección de categorías y descubre increíbles ofertas que no podrás resistir.</p>
       <a href="Paginas/Usuario/Productos.php" class="btn btn-primary">Explorar</a>
     </div>
