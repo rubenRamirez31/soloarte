@@ -1,4 +1,15 @@
+<?php
+
+include("../SoloArte/Layout/estilos.php");
+       
+
+?>
+    <?php include '../SoloArte/Layout/navbarU.php' ?>
+
+
+
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -13,33 +24,7 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">Solo Arte</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="Paginas/Usuario/Productos.php">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Paginas/Creadores/MostrarCreadores.php">Cradores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Paginas/Promociones/MostrarPromociones.php">Promociones</a>
-          </li>
-        </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
-      </div>
-    </div>
-  </nav>
+ 
 
   <!-- Carrusel de imágenes -->
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -108,26 +93,6 @@
   </div>
 </section>
 
-<!-- Sección de productos -->
-<section id="productos" class="py-5">
-  <div class="container">
-    <h2>Productos destacados</h2>
-    <!-- Aquí puedes agregar tus productos utilizando las cartas de Bootstrap -->
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="ruta-de-la-imagen.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Nombre del producto</h5>
-            <p class="card-text">Breve descripción del producto.</p>
-            <a href="#" class="btn btn-primary">Ver más</a>
-          </div>
-        </div>
-      </div>
-      <!-- Repite el código anterior para cada producto -->
-    </div>
-  </div>
-</section>
 
 <!-- Sección "Términos y condiciones" -->
 <section id="terminos-condiciones" class="bg-light py-5">
