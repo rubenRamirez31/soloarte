@@ -1,12 +1,11 @@
 <?php
 
-session_start();
+//session_start();
 
     
        
 ?>
 <?php
-
 
     if (!isset($_SESSION['usuario'])){
         header("Location: NoAutenticado.php");
@@ -31,7 +30,7 @@ session_start();
 </head>
 <body>
 
-
+<?php include '../../Layout/navbarU.php' ?>
 <div class="container mt-3">
     <h3 class= "text text-center">Creadores</h3>
 
