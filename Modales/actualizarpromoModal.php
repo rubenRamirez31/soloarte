@@ -22,8 +22,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="precio" class="form-label">Link: </label>
-                        <input type="number" name="precio" id="precio" class="form-control" required>
+                        <label for="link" class="form-label">Link: </label>
+                        <input type="number" name="link" id="link" class="form-control" required>
                     </div>
 
                     <div class="row justify-content-end">

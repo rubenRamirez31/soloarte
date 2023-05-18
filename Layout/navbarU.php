@@ -21,7 +21,7 @@ session_start();
           <a class="nav-link" aria-current="page" href="/soloarte/Paginas/Usuario/Productos.php">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cradores</a>
+          <a class="nav-link" href="/soloarte/Paginas/Creadores/MostrarCreadores.php">Cradores</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>
@@ -75,7 +75,7 @@ session_start();
               <a href="/soloarte/Paginas/Usuario/PerfilUsuario.php" class="nav-link text-white"><i class="fa-solid fa-user"></i> Mi Perfil</a>
             </li>
             <li class="nav-item p-3 py-md-1">
-              <a href="Envios.php" class="nav-link text-white"><i class="fa-solid fa-truck"></i> Mis Envios</a>
+              <a href="MisPedidos.php" class="nav-link text-white"><i class="fa-solid fa-truck"></i> Mis Pedidos</a>
             </li>
             <li class="nav-item p-3 py-md-1">
               <a href="Solicitudes.php" class="nav-link text-white"><i class="fa-solid fa-inbox"></i> Mensajes</a>

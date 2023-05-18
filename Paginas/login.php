@@ -44,6 +44,7 @@ if (isset($_SESSION['nombre'])) {
                         <div class="row g-0">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
+                                    <img src="" alt="">
 
                                     <div class="text-center">
                                         <img src="../Images/logo.jpg" style="width: 185px;" alt="logo">
@@ -97,10 +98,10 @@ if (isset($_SESSION['nombre'])) {
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
 
                     <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
-                        <img src="https://mdbootstrap.com/img/Photos/new-templates/animal-shelter/logo.png" height="70" alt="" loading="lazy" />
+                        <img src="https://us.123rf.com/450wm/yupiramos/yupiramos1809/yupiramos180927363/109687161-dise%C3%B1o-de-ilustraci%C3%B3n-de-vector-de-icono-de-pir%C3%A1mide-de-cultura-maya.jpg?ver=6" height="70" alt="" loading="lazy" />
                     </div>
 
-                    <p class="text-center">Homless animal shelter The budgetary unit of the Capital City of Warsaw</p>
+                    <p class="text-center">Chéen yila'ob(Solo arte)</p>
 
                     <ul class="list-unstyled d-flex flex-row justify-content-center">
                         <li>
@@ -125,74 +126,64 @@ if (isset($_SESSION['nombre'])) {
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">Animals</h5>
+                    <h5 class="text-uppercase mb-4">Conoce nuestros servicios</h5>
 
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>When your pet is missing</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Venta de artesanias</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Recently found</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Compra de artesanias</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>How to adopt?</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Promociones</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Pets for adoption</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Asociate con nosostros</a>
                         </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Material gifts</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Help with walks</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Volunteer activities</a>
-                        </li>
+               
                     </ul>
                 </div>
                 <!--Grid column-->
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">Animals</h5>
+                    <h5 class="text-uppercase mb-4">Acerca de nosostros</h5>
 
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>General information</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Tienda</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>About the shelter</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Asociación</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Statistic data</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Terminos y condiciones</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Job</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Blog</a>
                         </li>
                         <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Tenders</a>
+                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Trabajo remoto</a>
                         </li>
-                        <li class="mb-2">
-                            <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Contact</a>
-                        </li>
+                      
                     </ul>
                 </div>
                 <!--Grid column-->
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4">Contact</h5>
+                    <h5 class="text-uppercase mb-4">Contacto</h5>
 
                     <ul class="list-unstyled">
                         <li>
-                            <p><i class="fas fa-map-marker-alt pe-2"></i>Warsaw, 57 Street, Poland</p>
+                            <p><i class="fas fa-map-marker-alt pe-2"></i>Calle Las Abejas #32</p>
                         </li>
                         <li>
-                            <p><i class="fas fa-phone pe-2"></i>+ 01 234 567 89</p>
+                            <p><i class="fas fa-phone pe-2"></i>+52 231 458 98 63</p>
                         </li>
                         <li>
-                            <p><i class="fas fa-envelope pe-2 mb-0"></i>contact@example.com</p>
+                            <p><i class="fas fa-envelope pe-2 mb-0"></i>soloarte@store.com</p>
                         </li>
                     </ul>
                 </div>
