@@ -139,7 +139,7 @@
 
             <div class="col-lg-2 col-sm-12 d-flex justify-content-center ">
                 <div class="container d-flex justify-content-center" style="max-height: 40px;">
-                    <button class="btn btn-primary">Asociarme</button>
+                    <a class="btn btn-primary">Asociarme</a>
                 </div>
             </div>
         </div>
