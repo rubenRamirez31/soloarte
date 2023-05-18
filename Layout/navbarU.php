@@ -11,7 +11,7 @@ session_start();
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="../../index.php">SoloArte</a>
+    <a class="navbar-brand" href="/SoloArte/index.php">SoloArte</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,7 +21,7 @@ session_start();
           <a class="nav-link" aria-current="page" href="/soloarte/Paginas/Usuario/Productos.php">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cradores</a>
+          <a class="nav-link" href="/SoloArte\Paginas\Creadores\MostrarCreadores.php">Creadores</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>

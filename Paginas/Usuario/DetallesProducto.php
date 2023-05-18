@@ -15,14 +15,14 @@
     <?php include '../../Layout/navbar.php' ?>
 
     <?php
-        //  session_start();
+         session_start();
 
     //conexion para la base de datos y consultar los productos
     
     require '../../Conection/cn.php';
 
 
-    // $id = $_GET['idProducto'];
+     $id = $_GET['idProducto'];
 
     
     $query = "select * from productos where id_producto = $id";
