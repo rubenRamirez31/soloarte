@@ -1,5 +1,11 @@
+<!-- En este archivo se insertan los datos de los productos -->
 <?php 
+
+//Esta condicion es para validar que cuando entre a la pagina, indique si se esta haciendo
+//un metodo post y si no es asi nos regresara al index, esto para poder proteger 
+// el archivo
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
     require '../Conection/cn.php';
 
 $nombre = $db->real_escape_string($_POST['nombre']) ;
