@@ -15,9 +15,6 @@
     <div class="container">
 
         <img src="../../Transacciones/obtenerimgproducto.php?id=<?php echo $_GET['id'] ?>" alt="" style="width: 100px;">
-        <img src="../../Transacciones/obtenerimgproducto.php?id=<?php echo $_GET['id'] ?>" alt="" style="width: 100px;">
-        <img src="../../Transacciones/obtenerimgproducto.php?id=<?php echo $_GET['id'] ?>" alt="" style="width: 100px;">
-     
 
     </div>
     

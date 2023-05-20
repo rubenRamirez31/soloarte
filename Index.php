@@ -14,46 +14,46 @@
 </head>
 
 <body>
-<nav class=" navbar navbar-expand-lg  sticky-top  navbar-dark bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/soloarte">Solo Arte</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/soloarte/Paginas/Usuario/Productos.php">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/soloarte/Paginas/Creadores/MostrarCreadores.php">Craedores</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>
-        </li>
-<?php session_start() ?>
-        <?php if (isset($_SESSION['nombre'])) : ?>
+  <nav class=" navbar navbar-expand-lg  sticky-top  navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/soloarte">Solo Arte</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="Transacciones/cerrarSesion.php">Cerrar Sesión</a>
+            <a class="nav-link" aria-current="page" href="/soloarte/Paginas/Usuario/Productos.php">Productos</a>
           </li>
-        <?php endif ?>
-        
-        <?php if (!$_SESSION) : ?>
           <li class="nav-item">
-            <a class="nav-link" href="Paginas/login.php">Iniciar Sesión</a>
+            <a class="nav-link" href="/soloarte/Paginas/Creadores/MostrarCreadores.php">Craedores</a>
           </li>
-          <li>
-          <a class="nav-link" href="Paginas/crearUsuario.php">Registrate</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/soloarte/Paginas/Promociones/MostrarPromociones.php">Promociones</a>
           </li>
-        <?php endif ?>
+          <?php session_start() ?>
+          <?php if (isset($_SESSION['nombre'])) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="Transacciones/cerrarSesion.php">Cerrar Sesión</a>
+            </li>
+          <?php endif ?>
 
-      </ul>
+          <?php if (!$_SESSION) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="Paginas/login.php">Iniciar Sesión</a>
+            </li>
+            <li>
+              <a class="nav-link" href="Paginas/crearUsuario.php">Registrate</a>
+            </li>
+          <?php endif ?>
+
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 
   <!-- Carrusel de imágenes -->
@@ -99,7 +99,7 @@
 
     <div class="container mt-5" style="background-color: rgba(255, 255, 255, 0.5);">
       <h1>Bienvenido a SoloArte</h1>
-      
+
       <p>¡Encuentra los mejores productos al mejor precio en nuestra tienda en línea! Explora nuestra amplia selección de categorías y descubre increíbles ofertas que no podrás resistir.</p>
       <a href="Paginas/Usuario/Productos.php" class="btn btn-primary">Explorar</a>
     </div>
@@ -109,7 +109,7 @@
 
   <!-- Sección "Quiénes somos" -->
   <section id="quienes-somos" class="bg-light py-5" style="background-image: url('Images/Index/coktel.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    
+
     <div class="container" style="background-color: rgba(255, 255, 255, 0.5);">
       <h2>Quiénes somos</h2>
       <p>En Solo Arte, nos apasiona el arte mexicano y estamos comprometidos con su promoción y difusión. Nuestra misión es brindar una plataforma para que los artistas locales puedan exhibir y comercializar su trabajo, celebrando la riqueza cultural de México.</p>
@@ -137,14 +137,10 @@
     </div>
   </section>
 
+  <?php include 'Layout/footer.php' ?>
+
   <!-- Enlaces a los archivos JavaScript de Bootstrap -->
   <script src="Plugins/bootstrap/js/bootstrap.min.js"></script>
-</body>
-
-</html>
-
-<!-- Enlaces a los archivos JavaScript de Bootstrap -->
-<script src="Plugins/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

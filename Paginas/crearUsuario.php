@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <?php 
-    
+    <?php
+
     $resultado = $_GET['resul'] ?? null;
-    
+
     if ($resultado  === "1") : ?>
 
         <script>
@@ -32,16 +32,14 @@
                 <div class="col-xl-10">
                     <div class="card rounded-3 text-black">
                         <div class="row g-0">
-                            <div class="col-lg-4">
-                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4 text-dark">Somos mas que una compañía</h4>
-                                    <p class="small mb-0 text-dark">Imagen</p>
-                                </div>
+                            <div class="col-lg-5 col-sm-12">
+
+                                <h2 class="text-center text-dark m-5">Somos más que una empresa</h2>
+
+                                <img style="object-fit: contain;" src="../Images/registro.jpg" alt="" srcset="" class=" img-fluid img-thumbnail">
                             </div>
-                            <div class="col-lg-8 d-flex align-items-center gradient-custom-2">
-
-
-                                <div class="card-body p-md-5 mx-md-4">
+                            <div class="col-lg-7 col-sm-12 d-flex align-items-center gradient-custom-2">
+                                <div class="card-body">
 
                                     <div class="text-center">
                                         <img src="../Images/logo.jpg" style="width: 185px;" alt="logo">
