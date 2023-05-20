@@ -21,13 +21,13 @@
 
         <?php if (isset($_SESSION['nombre'])) : ?>
           <li class="nav-item">
-            <a class="nav-link" href="Transacciones/cerrarSesion.php">Cerrar Sesión</a>
+            <a class="nav-link" href="../../Transacciones/cerrarSesion.php">Cerrar Sesión</a>
           </li>
         <?php endif ?>
         
         <?php if (!$_SESSION) : ?>
           <li class="nav-item">
-            <a class="nav-link" href="Paginas/login.php">Iniciar Sesion</a>
+            <a class="nav-link" href="Paginas/login.php">Iniciar Sesión</a>
           </li>
         <?php endif ?>
 

@@ -11,6 +11,10 @@ while ($row = $resul->fetch_assoc()) {
   $datos[] = $row['imagen'];
 }
 
+// for ($i = 0; $i < $resul->num_rows; $i++) {
+//   echo '<img src="data:image/jpeg;base64,' . base64_encode($datos[$i]) . '" alt="Imagen del producto">';
+
+// }
 ?>
 
 <!DOCTYPE html>
@@ -25,11 +29,6 @@ while ($row = $resul->fetch_assoc()) {
 
 <body>
 
-  <?php for ($i = 0; $i < 3; $i++) : ?>
-
-    <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($datos[$i]) . '" alt="Imagen del producto">'; ?>
-
-  <?php endfor ?>
 
 </body>
 

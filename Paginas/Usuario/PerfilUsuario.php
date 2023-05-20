@@ -41,6 +41,23 @@
                 'error'
             );
         </script>
+    <?php elseif ($resultado === "4") : ?>
+        <script>
+            Swal.fire(
+                'Solicitud Enviada Correctamente',
+                'Puede ver el estatus de su solicitud en su perfil, tenga en cuenta que la revisión puede tardar hasta 7 días hábiles. ',
+                'success'
+            );
+        </script>
+
+    <?php elseif ($resultado === "5") : ?>
+        <script>
+            Swal.fire(
+                'Algo salio mal',
+                'Inténtelo de nuevo.',
+                'error'
+            );
+        </script>
     <?php endif ?>
 
 
@@ -138,8 +155,22 @@
             </div>
 
             <div class="col-lg-2 col-sm-12 d-flex justify-content-center ">
+
+                <?php
+
+                $query2 = "SELECT id_usuario,estado FROM solicitudes WHERE id_usuario = $idusuario";
+                $res = $db->query($query2);
+                $info = $res->fetch_assoc();
+
+                ?>
                 <div class="container d-flex justify-content-center" style="max-height: 40px;">
-                    <a href="formulario.php" class="btn btn-primary">Asociarme</a>
+                    <?php if ($info['estado'] = 'Enviada') : ?>
+                        <h3>Su solicitud ha sido <span class="text text-primary"><?php echo $info['estado']; ?></span> </h3>
+                    <?php endif ?>
+
+                    <?php if ($res->num_rows == null) : ?>
+                        <a href="formulario.php" class="btn btn-primary">Asociarme</a>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
