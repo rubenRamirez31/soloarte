@@ -73,6 +73,8 @@
     ?>
 
     <div class="container mt-5">
+
+    <?php var_dump($_SESSION) ?>
         <div class="row justify-content-between">
             <div class="col-lg-2 col-sm-12 d-flex justify-content-center">
                 <div class="">
@@ -99,7 +101,7 @@
                 <h1 class="text text-center">Mi Perfil</h1>
 
                 <div class="row justify-content-between mt-lg-5">
-                    <div class=" col-lg-6 col-sm-12 mt-3">
+                    <div class=" col-lg-6 col-sm-12 mt-3 mx-4">
                         <h5 class="text text-center">Datos Generales</h5>
                         <div class=" container-sm border border-dark">
                             <ul class="list-group list-group-flush">
@@ -122,7 +124,7 @@
                                 </li>
                                 <?php
                                 $query = "SELECT * FROM direcciones WHERE id_usuario = $idusuario";
-                                $res = $db->query($query);                                ?>
+                                $res = $db->query($query);   ?>
 
                                 <li class="list-group-item">
                                     <h5>Direcciones</h5>
@@ -164,7 +166,7 @@
 
                 ?>
                 <div class="container d-flex justify-content-center" style="max-height: 40px;">
-                    <?php if ($info['estado'] = 'Enviada') : ?>
+                    <?php if (isset($info['estado']) == 'Enviada') : ?>
                         <h3>Su solicitud ha sido <span class="text text-primary"><?php echo $info['estado']; ?></span> </h3>
                     <?php endif ?>
 

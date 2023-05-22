@@ -58,7 +58,7 @@ if ($_SESSION['rol'] != 1) {
             <h2 class="text text-center">Respuestas</h2>
 
             <div class="mb-3">
-                <h4>1. ¿Cuál es tu experiencia previa en la industria de distribución de artesanías o productos similares?</h4>
+                <h4 style="font-weight: bold;">1. ¿Cuál es tu experiencia previa en la industria de distribución de artesanías o productos similares?</h4>
                 <h5><?php echo $datos1['P1'] ?></h5>
             </div>
 
@@ -87,7 +87,7 @@ if ($_SESSION['rol'] != 1) {
 
                 $datos = array();
                 $id = $_GET['id'];
-                $sql = "SELECT imagenS FROM imgSolocitudes WHERE id_usuario=" . $_GET['id'] ;
+                $sql = "SELECT imagenS FROM imgSolocitudes WHERE id_usuario=" . $_GET['id'];
                 $resul = $db->query($sql);
 
                 while ($row = $resul->fetch_assoc()) {
@@ -98,19 +98,38 @@ if ($_SESSION['rol'] != 1) {
                 <h4 style="font-weight: bold;">Imagenes</h4>
 
                 <?php
-                
-                for ($i=0; $i < 3; $i++) { 
-                    
-                    echo '<img style="width: 400px;" class=" img-fluid mx-2 mt-2" src="data:image/jpeg;base64,' . base64_encode($datos[$i]) . '" alt="Imagen del producto del usuario">'  ; 
 
+                for ($i = 0; $i < 3; $i++) {
+
+                    echo '<img style="width: 400px;" class=" img-fluid mx-2 mt-2" src="data:image/jpeg;base64,' . base64_encode($datos[$i]) . '" alt="Imagen del producto del usuario">';
                 }
-                
+
                 ?>
 
             </div>
 
+            <div class="d-flex justify-content-end">
+                <div class="mb-3">
+                    <form action="../../Transacciones/actestatussoli.php" method="POST">
+                        <input type="hidden" name="id_usuario" value="<?php echo $_GET['id'] ?>">
+                        <?php if ($datos1['estado'] == 'Enviada') : ?>
+                            <button type="submit" class="btn btn-outline-success">Marcar como leída</button>
+                        <?php endif ?>
 
-
+                        <?php if ($datos1['estado'] == 'Revision') : ?>
+                            <div class=" d-flex justify-content-between">
+                                <label style="font-weight: bold;" class="" for="select">Seleccione un estado</label>
+                                <select name="estado" id="select" class=" form-select">
+                                    <option value="" selected disabled>Seleccionar</option>
+                                    <option value="Aceptada">Aceptar</option>
+                                    <option value="Rechazada">Rechazar</option>
+                                </select>
+                                <button type="submit" class="btn btn-outline-success">Enviar</button>
+                            </div>
+                        <?php endif ?>
+                    </form>
+                </div>
+            </div>
         </div>
 
 
