@@ -118,7 +118,7 @@ if ($_SESSION['rol'] != 1) {
 
                         <?php if ($datos1['estado'] == 'Revision') : ?>
                             <div class=" d-flex justify-content-between">
-                                <label style="font-weight: bold;" class="" for="select">Seleccione un estado</label>
+                                <label style="font-weight: bold;" class="" for="select">Seleccione una opcion</label>
                                 <select name="estado" id="select" class=" form-select">
                                     <option value="" selected disabled>Seleccionar</option>
                                     <option value="Aceptada">Aceptar</option>
