@@ -110,14 +110,16 @@ if ($_SESSION['rol'] != 1) {
 
             <div class="d-flex justify-content-end">
                 <div class="mb-3">
-                    <form action="../../Transacciones/actestatussoli.php" method="POST">
-                        <input type="hidden" name="id_usuario" value="<?php echo $_GET['id'] ?>">
-                        <?php if ($datos1['estado'] == 'Enviada') : ?>
+                    <?php if ($datos1['estado'] == 'Enviada') : ?>
+                        <form action="../../Transacciones/actestatussoli.php" method="POST">
+                            <input type="hidden" name="id_usuario" value="<?php echo $_GET['id'] ?>">
                             <button type="submit" class="btn btn-outline-success">Marcar como leída</button>
-                        <?php endif ?>
+                        </form>
+                    <?php endif ?>
 
-                        <?php if ($datos1['estado'] == 'Revision') : ?>
-                            <div class=" d-flex justify-content-between">
+                    <?php if ($datos1['estado'] == 'Revision') : ?>
+                        <div class=" d-flex justify-content-between">
+                            <form action="../../Transacciones/aceptarechazar.php">
                                 <label style="font-weight: bold;" class="" for="select">Seleccione una opcion</label>
                                 <select name="estado" id="select" class=" form-select">
                                     <option value="" selected disabled>Seleccionar</option>
@@ -125,9 +127,10 @@ if ($_SESSION['rol'] != 1) {
                                     <option value="Rechazada">Rechazar</option>
                                 </select>
                                 <button type="submit" class="btn btn-outline-success">Enviar</button>
-                            </div>
-                        <?php endif ?>
-                    </form>
+                            </form>
+                        </div>
+                    <?php endif ?>
+
                 </div>
             </div>
         </div>
