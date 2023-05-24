@@ -56,8 +56,6 @@
                             <li class='list-group-item'> <span style="font-weight: bold;">En stock:</span> <?php echo $row_productos['stock']; ?><span></span></li>
 
 
-
-
                             <div class="d-flex justify-content-end">
                                 <form id="formulario" name="formulario" method="post" action="../Usuario/Carrito/cart.php">
                                     <input name="precio" type="hidden" id="precio" value="<?php echo $row_productos['precio']; ?>" />
