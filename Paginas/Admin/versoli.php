@@ -120,13 +120,15 @@ if ($_SESSION['rol'] != 1) {
                     <?php if ($datos1['estado'] == 'Revision') : ?>
                         <div class=" ">
                             <form action="../../Transacciones/aceptarechazar.php" method="POST" class="d-flex justify-content-between">
+                                <input type="hidden" name="id_usuario" value="<?php echo $_GET['id'] ?>">
+
                                 <label style="font-weight: bold;" class=" mx-1" for="select">Seleccione una opción</label>
                                 <select name="estado" id="select" class=" form-select mx-1">
                                     <option value="" selected disabled>Seleccionar</option>
                                     <option value="Aceptada">Aceptar</option>
                                     <option value="Rechazada">Rechazar</option>
                                 </select>
-                                <button  type="submit" class="btn btn-outline-success mx-1">Enviar</button>
+                                <button type="submit" class="btn btn-outline-success mx-1">Enviar</button>
                             </form>
                         </div>
                     <?php endif ?>

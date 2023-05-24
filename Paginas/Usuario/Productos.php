@@ -45,6 +45,8 @@
                     <!-- <div class='col-sm-16 col-md-4'>	 -->
                     <div class='card' style='width: 18rem;'>
 
+                        <img class="card-img-top" style="object-fit: contain; height: 200px;" src="../../Transacciones/getimagenes.php?id=<?php echo $row_productos['id_producto'] ?>" alt="Imagen del producto">
+
                         <ul class='list-group list-group-flush'>
 
                             <li class='list-group-item'> <span style="font-weight: bold;"></span> <?php echo $row_productos['nombre']; ?></li>
@@ -56,14 +58,16 @@
 
 
 
+                            <div class="d-flex justify-content-end">
+                                <form id="formulario" name="formulario" method="post" action="../Usuario/Carrito/cart.php">
+                                    <input name="precio" type="hidden" id="precio" value="<?php echo $row_productos['precio']; ?>" />
+                                    <input name="titulo" type="hidden" id="titulo" value="<?php echo $row_productos['nombre']; ?>" />
+                                    <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+                                    <button class="btn btn-outline-primary" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                </form>
+                            </div>
 
-                            <form id="formulario" name="formulario" method="post" action="../Usuario/Carrito/cart.php">
-                                <input name="precio" type="hidden" id="precio" value="<?php echo $row_productos['precio']; ?>" />
-                                <input name="titulo" type="hidden" id="titulo" value="<?php echo $row_productos['nombre']; ?>" />
-                                <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
-                                <button class="btn btn-outline-primary bg bg-azulmaya" type="submit"><i class="fas fa-shopping-cart"></i></button>
-                            </form>
-                            </span>
+
 
 
 

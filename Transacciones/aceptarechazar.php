@@ -7,7 +7,6 @@
 // el archivo
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-
     //Mandamos a llamar el archivo de la conexcion a la base de datos
     require '../Conection/cn.php';
 

@@ -8,6 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     require '../Conection/cn.php';
 
+
+    var_dump($_POST);
+    exit;
+
 $nombre = $db->real_escape_string($_POST['nombre']) ;
 $descripcion = $db->real_escape_string($_POST['descripcion']) ;
 $precio = $db->real_escape_string($_POST['precio']);

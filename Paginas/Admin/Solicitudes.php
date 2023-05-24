@@ -70,8 +70,8 @@ if ($_SESSION['rol'] != 1) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <?php while ($row_solicitud = $res->fetch_assoc()) : ?>
+                                <?php while ($row_solicitud = $res->fetch_assoc()) : ?>
+                                    <tr>
 
                                         <?php
 
@@ -86,9 +86,9 @@ if ($_SESSION['rol'] != 1) {
                                         <td>
                                             <a href="versoli.php?id=<?php echo $row_solicitud['id_usuario'] ?>" class="btn btn-outline-dark"><i class="fa-regular fa-eye"></i>Ver</a>
                                         </td>
-                                    <?php endwhile ?>
-                                </tr>
 
+                                    </tr>
+                                <?php endwhile ?>
                             </tbody>
                         </table>
                     </div>
@@ -99,7 +99,6 @@ if ($_SESSION['rol'] != 1) {
                     <h3 class="text text-center">Revisión</h3>
 
                     <?php
-                    include '../../Conection/cn.php';
 
                     $query3 = "SELECT id_usuario,fecha FROM solicitudes WHERE estado = 'Revision'";
                     $res3 = $db->query($query3);
@@ -115,9 +114,8 @@ if ($_SESSION['rol'] != 1) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <?php while ($row_revision = $res3->fetch_assoc()) : ?>
-
+                                <?php while ($row_revision = $res3->fetch_assoc()) : ?>
+                                    <tr>
                                         <?php
 
                                         $query1 = "SELECT email FROM usuarios WHERE id_usuario = " . $row_revision['id_usuario'];
@@ -125,15 +123,13 @@ if ($_SESSION['rol'] != 1) {
                                         $datos = $res1->fetch_assoc();
                                         ?>
 
-
                                         <td> <?php echo $datos['email'] ?> </td>
                                         <td> <?php echo $row_revision['fecha'] ?> </td>
                                         <td>
                                             <a href="versoli.php?id=<?php echo $row_revision['id_usuario'] ?>" class="btn btn-outline-dark"><i class="fa-regular fa-eye"></i>Ver</a>
                                         </td>
-                                    <?php endwhile ?>
-                                </tr>
-
+                                    </tr>
+                                <?php endwhile ?>
                             </tbody>
                         </table>
                     </div>
@@ -141,6 +137,42 @@ if ($_SESSION['rol'] != 1) {
 
                 <div class=" col-lg-4 col-sm-12  mt-2">
                     <h3 class="text text-center">Aceptadas y rechazadas</h3>
+                    <?php
+
+                    $query4 = "SELECT id_usuario,fecha,estado FROM solicitudes WHERE estado IN ('Aceptada','Rechazada')";
+                    $res4 = $db->query($query4);
+                    ?>
+
+                    <div class="">
+                        <table id="acpt" class="table table-sm table-hover mt-4 table-responsive">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Correo Electronico</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php while ($row = $res4->fetch_assoc()) : ?>
+                                    <tr>
+                                        <?php
+
+                                        $query1 = "SELECT email FROM usuarios WHERE id_usuario = " . $row['id_usuario'];
+                                        $res1 = $db->query($query1);
+                                        $datos = $res1->fetch_assoc();
+                                        ?>
+
+                                        <td> <?php echo $datos['email'] ?> </td>
+                                        <td> <?php echo $row['fecha'] ?> </td>
+                                        <td>
+                                            <p><?php echo $row['estado'] ?></p>
+    
+                                        </td>
+                                    </tr>
+                                <?php endwhile ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,6 +186,7 @@ if ($_SESSION['rol'] != 1) {
         $j(document).ready(function() {
             $j('#snuevas').DataTable({
                 "language": {
+                    "emptyTable": "Sin registros",
                     "lengthMenu": "Mostrar _MENU_ Solicitudes",
                     "zeroRecords": "Sin resultados",
                     "info": "Mostrando solicitudes del _START_ al _END_ de un total de _TOTAL_ solicitudes",
@@ -173,8 +206,9 @@ if ($_SESSION['rol'] != 1) {
 
         var $a = jQuery.noConflict();
         $a(document).ready(function() {
-            $j('#revision').DataTable({
+            $a('#revision').DataTable({
                 "language": {
+                    "emptyTable": "Sin registros",
                     "lengthMenu": "Mostrar _MENU_ Solicitudes",
                     "zeroRecords": "Sin resultados",
                     "info": "Mostrando solicitudes del _START_ al _END_ de un total de _TOTAL_ solicitudes",
@@ -192,6 +226,27 @@ if ($_SESSION['rol'] != 1) {
             });
         });
 
+        var $b = jQuery.noConflict();
+        $b(document).ready(function() {
+            $b('#acpt').DataTable({
+                "language": {
+                    "emptyTable": "Sin registros",
+                    "lengthMenu": "Mostrar _MENU_ Solicitudes",
+                    "zeroRecords": "Sin resultados",
+                    "info": "Mostrando solicitudes del _START_ al _END_ de un total de _TOTAL_ solicitudes",
+                    "infoEmpty": "Mostrando solicitudes del 0 al 0 de un total de 0 solicitudes",
+                    "infoFiltered": "(Filtrando de un total de _MAX_ solicitudes)",
+                    "sSearch": "Buscar",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Ultimo",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "sProcessing": "Procesando..."
+                }
+            });
+        });
     </script>
 
 

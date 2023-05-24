@@ -213,13 +213,7 @@ if ($_SESSION['rol'] != 1) {
 
 
     </script>
-
-
-
-
-
-
-
+    
     <script>
         var $j = jQuery.noConflict();
 
