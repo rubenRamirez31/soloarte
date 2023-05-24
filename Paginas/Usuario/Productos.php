@@ -57,12 +57,19 @@
 
 
                             <div class="d-flex justify-content-end">
-                                <form id="formulario" name="formulario" method="post" action="../Usuario/Carrito/cart.php">
-                                    <input name="precio" type="hidden" id="precio" value="<?php echo $row_productos['precio']; ?>" />
-                                    <input name="titulo" type="hidden" id="titulo" value="<?php echo $row_productos['nombre']; ?>" />
-                                    <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
-                                    <button class="btn btn-outline-primary" type="submit"><i class="fas fa-shopping-cart"></i></button>
-                                </form>
+                                <?php if (!$_SESSION) : ?>
+
+                                    <a href="../login.php" class="btn btn-outline-primary">Inicia Sesión</a>
+
+                                <?php elseif ($_SESSION['nombre']) : ?>
+                                    <form id="formulario" name="formulario" method="post" action="../Usuario/Carrito/cart.php">
+                                        <input name="precio" type="hidden" id="precio" value="<?php echo $row_productos['precio']; ?>" />
+                                        <input name="titulo" type="hidden" id="titulo" value="<?php echo $row_productos['nombre']; ?>" />
+                                        <input name="cantidad" type="hidden" id="cantidad" value="1" class="pl-2" />
+                                        <button class="btn btn-outline-primary" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                    </form>
+
+                                <?php endif ?>
                             </div>
 
 
