@@ -1,4 +1,4 @@
-<!-- En este archivo se actualizan los datos de los productos -->
+<!-- En este archivo se actualiza el estatus de la solicitud -->
 
 <?php
 
@@ -8,17 +8,12 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
-
     //Mandamos a llamar el archivo de la conexcion a la base de datos
     require '../Conection/cn.php';
 
-
-    var_dump($_POST);
-    exit;
-
     //Guardamos los datos que se envian del formulario
     // con la funcion de filtrar los datos, oara evitar insersion de codigo sql    
-    $estatus = 'Revision';
+    $estatus = $_POST['estado'];
     $idUsuario = $_POST['id_usuario'];
 
 
@@ -31,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
        header('Location:/soloarte/Paginas/Admin/Solicitudes.php?resul=1');
     } else {
         //de otro modo habra un echo con un mnesaje de error
-        echo 'error al insertar';
-        exit;
+        header('Location:/soloarte/Paginas/Admin/Solicitudes.php?resul=2');
+
     }
 } else {
     //Este else es para que cuando se trate de entrar al archivo sin enviar datos por metodo POST 
